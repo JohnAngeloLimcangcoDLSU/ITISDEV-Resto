@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="inventory.css">
+
+
+<html>
+
+<div class = "header">
+    
+        <h1>Inventory List</h1>
+
+</div>
+
+<table>
+    <tr>
+      <th>Ingredients    <img src="arrowDown.png" class="arrowIcon"> </th>
+   
+      <th>Size  <img src="arrowDown.png" class="arrowIcon">  </th>
+      <th>Unit</th>
+      <th>Quantity  <img src="arrowDown.png" class="arrowIcon"> </th>
+    </tr>
+    <tr>
+      <td>Banana</td>
+      <td>1000</td>
+      <td>g</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Tuna</td>
+      <td>125</td>
+      <td>g</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Rice</td>
+      <td>125</td>
+      <td>g</td>
+      <td>4</td>
+    </tr>
+
+  </table>
+
+
+  <style>
+    /* Popup container - can be anything you want */
+    .popup {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    /* The actual popup */
+    .popup .popuptext {
+      visibility: hidden;
+      width: 300px;
+      height: 300px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+    }
+    
+    /* Popup arrow */
+    .popup .popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+    
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
+    
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+      from {opacity: 0;} 
+      to {opacity: 1;}
+    }
+    
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity:1 ;}
+    }
+    </style>
+
+<body style="text-align:center">
+
+  
+  <div class="popup">
+    <button onclick="myFunction()">Add Ingredients</button>
+    <span class="popuptext" id="myPopup">
+      
+      Ingredient Name: <input type="text" name="userName" id="userName" class="LogInUsername" placeholder="Ingredient">
+      Size: <input type="text" name="userName" id="userName" class="LogInUsername" placeholder="Size">
+      Units of Measurement: <input type="text" name="userName" id="userName" class="LogInUsername" placeholder="Ingredient">
+      Quantity: <input type="text" name="userName" id="userName" class="LogInUsername" placeholder="Ingredient">
+    </span>
+  </div>
+  
+  <script>
+  // When the user clicks on div, open the popup
+  function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+  </script>
+  
+  </body>
+
+
+</html>

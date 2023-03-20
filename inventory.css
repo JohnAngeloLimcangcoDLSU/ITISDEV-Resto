@@ -1,0 +1,55 @@
+@import 
+url('https://fonts.googleapis.com/css2?family=Lato&display=swap');  
+
+:root {
+    --primary: #3e48a9;
+    --accent: #f9bbd0;
+    --text-primary: #ffffff;
+    --text-accent: #000000;
+    --text-subtle: #000000;
+    --text-link: #003469;
+}
+
+.header{
+    position: sticky;
+    text-align: center;
+    border: 1px solid rgb(214,214,214);
+    top: 0px;
+    margin: -10px;
+    background: #36AEB0;
+    font-family: Lato, sans-serif;
+    color: white;
+}
+
+.arrowIcon{
+  /* display: flex;
+	position:relative; */
+  width: 20px;
+	height: 20px;
+  
+}
+
+.arrowIcon:hover{
+  transform: rotate(180deg);
+}
+
+
+
+table {
+    font-family: Lato, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  td, th {
+    border: 2px solid black;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: white;
+  }

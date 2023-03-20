@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="STOCK-spoilageReport.css">
+
+
+<html>
+
+<div class = "header">
+    
+  <h1>Create Spoilage Report</h1>
+
+
+</div>
+
+<div class="sidebar">
+
+    <div class ="sidebar-category">
+      <p>Ingredients</p>
+    </div>
+  
+    <div class ="sidebar-text">
+      <a href="STOCK-addNewIngredient.html"> <img src="click-sidebar.png" class="click-sidebar"> Add New Ingredient</a>
+      <a href="STOCK-inputNewPurchase.html"> <img src="click-sidebar.png" class="click-sidebar"> Input New Purchases</a>
+    </div>
+  
+    <div class ="sidebar-category">
+      <p>Reports</p>
+    </div>
+  
+    <div class ="sidebar-text">
+      <a href="STOCK-viewInventory.html"> <img src="click-sidebar.png" class="click-sidebar"> View Inventory</a>
+     <br>
+      <a href="STOCK-spoilageReport.html"> <img src="click-sidebar.png" class="click-sidebar"> Create Spoilage Report</a>
+      <a href="STOCK-discrepancyReport.html"> <img src="click-sidebar.png" class="click-sidebar"> Create Discrepancy Report</a>
+    </div>
+
+</div>
+
+<div class="form-content">
+  <h1>Input the spoiled quantity found. <br><br> The spoiled items will be depleted from the system quantity </h1>
+  
+  <form action="/action_page.php">
+
+    <label for="ingredientName">Select Ingredient:</label>
+    <select name="ingredientName" id="ingredientName">
+        <option value="banana">Banana</option>
+        <option value="apple">Apple</option>
+        <option value="tuna">Tuna</option>
+        <option value="coke">Coke</option>
+    </select>
+
+    <br><br>
+
+    <label for="quantity">Spoiled Quantity:</label>
+    <input type="text" id="quantity" name="quantity">
+
+    <br><br>
+
+    <label for="unit">Unit of Measurement:</label>
+    <select name="unit" id="unit">
+        <option value="mg">mg</option>
+        <option value="g">g</option>
+        <option value="kg">kg</option>
+        <option value="lb">lb</option>
+        <option value="oz">oz</option>
+        <option value="mL">mL</option>
+        <option value="L">L</option>
+    </select>
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+  </form> 
+
+  
+
+
+
+
+</div>
+
+
+
+
+
+
+</html>
