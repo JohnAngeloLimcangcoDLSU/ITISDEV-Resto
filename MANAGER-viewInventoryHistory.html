@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="MANAGER-viewInventory.css">
+
+
+<html>
+
+<div class = "header">
+    
+  <h1 style = >View Inventory History</h1>
+
+ 
+
+    <!-- <h1 style = text-align:right>Manager</h1> -->
+  
+  
+
+
+</div>
+
+<div class="sidebar">
+
+  <div class ="sidebar-category">
+    <p>Users</p>
+  </div>
+
+  <div class ="sidebar-text">
+    <a href="MANAGER-createUser.html"> <img src="click-sidebar.png" class="click-sidebar"> Create New Users</a>
+   <br><br>
+  </div>
+
+  <div class ="sidebar-category">
+    <p>Menu</p>
+  </div>
+
+  <div class ="sidebar-text">
+    <a href="MANAGER-createMenu.html"> <img src="click-sidebar.png" class="click-sidebar"> Create Menu</a>
+  </div>
+
+ 
+
+  <div class ="sidebar-category">
+    <p>Reports</p>
+  </div>
+
+  <div class ="sidebar-text">
+    <a href="MANAGER-viewInventory.html"> <img src="click-sidebar.png" class="click-sidebar"> View Inventory Report</a>
+   <br><br>
+    <a href="MANAGER-viewInventoryHistory.html"> <img src="click-sidebar.png" class="click-sidebar"> View Inventory History Report</a>
+    <br><br>
+    <a href="MANAGER-viewSpoilage.html"> <img src="click-sidebar.png" class="click-sidebar"> View Spoilage Report</a>
+    <br><br>
+    <a href="MANAGER-viewDiscrepancy.html"> <img src="click-sidebar.png" class="click-sidebar"> View Discrepancy Report</a>
+    <br><br>
+    <a href="MANAGER-viewCashier.html"> <img src="click-sidebar.png" class="click-sidebar"> View Cashier Report</a>
+    <br><br>
+  </div>
+
+
+
+
+</div>
+
+<div class="form-content">
+  <h1>Sort by Date Range</h1>
+
+  <center>
+    <input type="date" id="startDate" name="date-start"> -
+    <input type="date" id="endDate" name="date-end">
+  </center>
+  
+
+  <table>
+    <tr>
+      <th>Ingredients</th>
+      <th>Current Quantity</th>
+      <th>Unit</th>
+      <th>Quantity Depleted</th>
+      <th>Event</th>
+      <th>Date</th>
+    </tr>
+    <tr>
+      <td>Apple</td>
+      <td>50</td>
+      <td>g</td>
+      <td>10</td>
+      <td>Spoiled</td>
+      <td>2/3/2023</td>
+    </tr>
+    <tr>
+      <td>Tuna</td>
+      <td>500</td>
+      <td>g</td>
+      <td>100</td>
+      <td>Discrepancy Found</td>
+      <td>2/4/2023</td>
+    </tr>
+    <tr>
+      <td>Coke</td>
+      <td>5</td>
+      <td>mL</td>
+      <td>2</td>
+      <td>Used for "Coke Float"</td>
+      <td>2/5/2023</td>
+    </tr>
+
+  </table>
+
+  
+
+
+
+
+</div>
+
+
+
+
+
+
+</html>
