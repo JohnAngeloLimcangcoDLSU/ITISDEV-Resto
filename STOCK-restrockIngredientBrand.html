@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="STOCK-restrockIngredient.css">
+<link rel="stylesheet" href="STOCK-restrockIngredientBrand.css">
 
 
 <html>
@@ -39,21 +39,34 @@
 
 <div class="form-content">
 
-  <h1>Select a type of ingredient to restock</h1>
-  <table>
+  
+  <form action="/action_page.php">
 
-    <tr>
-      <th>Ingredients</th>
-      <th>Reports</th>
-    </tr>
+    <label for="ingredientName">Ingredient Category:</label>
+    <select name="ingredientName" id="ingredientName">
+        <option value="banana">Banana</option>
+        <option value="apple">Apple</option>
+        <option value="tuna">Tuna</option>
+        <option value="coke">Coke</option>
+    </select>
 
-    <tr>
-      <td><a href="STOCK-restrockIngredientBrand.html">Branded</a></td>
-      <td><a href="STOCK-restrockIngredientNoBrand.html">Non-Branded</a></td>
-    </tr>
+    <br><br>
 
+    <label for="brand">Brand:</label>
+    <select name="brand" id="brand">
+      <option value="centurytuna">Century Tuna 250g</option>
+      <option value="delmundo">Del Mundo 300g</option>
+  </select>
 
-  </table>
+  <br><br>
+
+  <label for="itemBought">Number of item/s bought:</label>
+    <input type="text" id="itemBought" name="itemBought">
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+  </form> 
 
 
 
