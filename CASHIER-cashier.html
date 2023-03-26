@@ -137,7 +137,7 @@ addButtons.forEach(button => {
     totalCell.innerText = dishPrice;
     
     const actionCell = newRow.insertCell();
-    actionCell.innerHTML = '<button class="button">Remove</button>';
+    actionCell.innerHTML = '<button class="remove-button">Remove</button>';
     
 	// Update the total cost of the order
 	const totalCostCell = document.querySelector('#totalCostCell');
@@ -150,45 +150,52 @@ addButtons.forEach(button => {
 	totalCostParagraph.innerText = 'P' + (currentTotal + dishCost).toFixed(2);
 
 
-    // Add an event listener to the "-" button of the new row
-const minusButton = newRow.querySelector('button:first-of-type');
-minusButton.addEventListener('click', (event) => {
-  event.stopPropagation();
-  const quantity = parseInt(event.target.nextElementSibling.innerText);
-  if (quantity > 1) {
-    event.target.nextElementSibling.innerText = quantity - 1;
-    const newTotal = (dishCost * (quantity - 1)).toFixed(2);
-    totalCell.innerText = 'P' + newTotal;
-    totalCostCell.innerText = 'P' + (currentTotal - dishCost).toFixed(2) + newTotal;
-    totalCostParagraph.innerText = 'P' + (currentTotal - dishCost).toFixed(2) + newTotal;
-  }
-});
+		// Add an event listener to the "-" button of the new row
+	const minusButton = newRow.querySelector('button:first-of-type');
+	minusButton.addEventListener('click', (event) => {
+	event.stopPropagation();
+	const quantity = parseInt(event.target.nextElementSibling.innerText);
+	if (quantity > 1) {
+		event.target.nextElementSibling.innerText = quantity - 1;
+		const newTotal = (dishCost * (quantity - 1)).toFixed(2);
+		totalCell.innerText = 'P' + newTotal;
+		totalCostCell.innerText = 'P' + (currentTotal - newTotal).toFixed(2);
+		totalCostParagraph.innerText = 'P' + (currentTotal - newTotal).toFixed(2);
+	}
+	});
 
-// Add an event listener to the "+" button of the new row
-const plusButton = newRow.querySelector('button:last-of-type');
-plusButton.addEventListener('click', (event) => {
-  event.stopPropagation();
-  const quantity = parseInt(event.target.previousElementSibling.innerText);
-  event.target.previousElementSibling.innerText = quantity + 1;
-  const newTotal = (dishCost * (quantity + 1)).toFixed(2);
-  totalCell.innerText = 'P' + newTotal;
-  totalCostCell.innerText = 'P' + (currentTotal + dishCost).toFixed(2) + newTotal;
-  totalCostParagraph.innerText = 'P' + (currentTotal + dishCost).toFixed(2) + newTotal;
-});
+	// Add an event listener to the "+" button of the new row
+	const plusButton = newRow.querySelector('button:last-of-type');
+	plusButton.addEventListener('click', (event) => {
+	event.stopPropagation();
+	const quantity = parseInt(event.target.previousElementSibling.innerText);
+	event.target.previousElementSibling.innerText = quantity + 1;
+	const newTotal = (dishCost * (quantity + 1)).toFixed(2);
+	totalCell.innerText = 'P' + newTotal;
+	totalCostCell.innerText = 'P' + (currentTotal + dishCost).toFixed(2) + newTotal;
+	totalCostParagraph.innerText = 'P' + (currentTotal + dishCost).toFixed(2) + newTotal;
+	});
 
-
+	const removeButtons = document.querySelectorAll('.remove-button');
 	
+	removeButtons.forEach(button => {
+  	button.addEventListener('click', () => {
+    // Get the parent element of the button, which is the row element
+    const row = button.parentNode.parentNode;
+	const newTotal = (dishCost).toFixed(2);
 
-
-
+		// Remove the row element
+		row.remove();
+		totalCostCell.innerText = 'P' + (currentTotal - newTotal).toFixed(2);
+		totalCostParagraph.innerText = 'P' + (currentTotal - newTotal).toFixed(2);
+		});
+	});
 
   });
+  
 });
 
 	
-
-
-
 
 
 
