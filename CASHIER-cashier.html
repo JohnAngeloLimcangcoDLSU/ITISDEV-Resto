@@ -139,28 +139,32 @@ addButtons.forEach(button => {
 	totalCostParagraph.innerText = 'P' + (currentTotal + dishCost).toFixed(2);
 
 
-    
     // Add an event listener to the "-" button of the new row
-    const minusButton = newRow.querySelector('button:first-of-type');
-    minusButton.addEventListener('click', (event) => {
-      event.stopPropagation();
-      const quantity = parseInt(event.target.nextElementSibling.innerText);
-      if (quantity > 1) {
-        event.target.nextElementSibling.innerText = quantity - 1;
-        totalCell.innerText = 'P' + (dishCost * (quantity - 1)).toFixed(2);
-        totalCostCell.innerText = 'P' + (currentTotal - dishCost).toFixed(2);
-      }
-    });
-    
-    // Add an event listener to the "+" button of the new row
-    const plusButton = newRow.querySelector('button:last-of-type');
-    plusButton.addEventListener('click', (event) => {
-      event.stopPropagation();
-      const quantity = parseInt(event.target.previousElementSibling.innerText);
-      event.target.previousElementSibling.innerText = quantity + 1;
-      totalCell.innerText = 'P' + (dishCost * (quantity + 1)).toFixed(2);
-      totalCostCell.innerText = 'P' + (currentTotal + dishCost).toFixed(2);
-    });
+const minusButton = newRow.querySelector('button:first-of-type');
+minusButton.addEventListener('click', (event) => {
+  event.stopPropagation();
+  const quantity = parseInt(event.target.nextElementSibling.innerText);
+  if (quantity > 1) {
+    event.target.nextElementSibling.innerText = quantity - 1;
+    const newTotal = (dishCost * (quantity - 1)).toFixed(2);
+    totalCell.innerText = 'P' + newTotal;
+    totalCostCell.innerText = 'P' + (currentTotal - dishCost).toFixed(2) + newTotal;
+    totalCostParagraph.innerText = 'P' + (currentTotal - dishCost).toFixed(2) + newTotal;
+  }
+});
+
+// Add an event listener to the "+" button of the new row
+const plusButton = newRow.querySelector('button:last-of-type');
+plusButton.addEventListener('click', (event) => {
+  event.stopPropagation();
+  const quantity = parseInt(event.target.previousElementSibling.innerText);
+  event.target.previousElementSibling.innerText = quantity + 1;
+  const newTotal = (dishCost * (quantity + 1)).toFixed(2);
+  totalCell.innerText = 'P' + newTotal;
+  totalCostCell.innerText = 'P' + (currentTotal + dishCost).toFixed(2) + newTotal;
+  totalCostParagraph.innerText = 'P' + (currentTotal + dishCost).toFixed(2) + newTotal;
+});
+
 
 	
 
