@@ -70,39 +70,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>Item 1</td>
-				<td>$10.00</td>
-				<td>
-					<button class="button">-</button>
-					<span>1</span>
-					<button class="button">+</button>
-				</td>
-				<td>$10.00</td>
-				<td><button class="button">Remove</button></td>
-			</tr>
-			<tr>
-				<td>Item 2</td>
-				<td>$15.00</td>
-				<td>
-					<button class="button">-</button>
-					<span>2</span>
-					<button class="button">+</button>
-				</td>
-				<td>$30.00</td>
-				<td><button class="button">Remove</button></td>
-			</tr>
-			<tr>
-				<td>Item 3</td>
-				<td>$20.00</td>
-				<td>
-					<button class="button">-</button>
-					<span>3</span>
-					<button class="button">+</button>
-				</td>
-				<td>$60.00</td>
-				<td><button class="button">Remove</button></td>
-			</tr>
+			
             
 		</tbody>
 		<tfoot>
@@ -123,7 +91,87 @@
 
 
 
+<script>
+// Get the "Add" buttons from the "available dishes" list
+const addButtons = document.querySelectorAll('.availableDish li button');
 
+// Add an event listener to each "Add" button
+addButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Get the name and price of the selected dish
+    const dishName = button.nextElementSibling.innerText;
+    const dishPrice = button.nextElementSibling.nextElementSibling.innerText;
+    
+    // Create a new row in the "current orders" table
+    const table = document.querySelector('.currentOrder table tbody');
+    const newRow = table.insertRow();
+    
+    // Add the dish details to the new row
+    const dishCell = newRow.insertCell();
+    dishCell.innerText = dishName;
+    
+    const priceCell = newRow.insertCell();
+    priceCell.innerText = dishPrice;
+    
+    const quantityCell = newRow.insertCell();
+    quantityCell.innerHTML = `
+      <button class="button">-</button>
+      <span>1</span>
+      <button class="button">+</button>
+    `;
+    
+    const totalCell = newRow.insertCell();
+    totalCell.innerText = dishPrice;
+    
+    const actionCell = newRow.insertCell();
+    actionCell.innerHTML = '<button class="button">Remove</button>';
+    
+    // Update the total cost of the order
+    const totalCostCell = document.querySelector('.currentOrder table tfoot th:last-child');
+    const currentTotal = parseFloat(totalCostCell.innerText.substring(1));
+    const dishCost = parseFloat(dishPrice.substring(1));
+    totalCostCell.innerText = '$' + (currentTotal + dishCost).toFixed(2);
+
+    
+    // Add an event listener to the "-" button of the new row
+    const minusButton = newRow.querySelector('button:first-of-type');
+    minusButton.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const quantity = parseInt(event.target.nextElementSibling.innerText);
+      if (quantity > 1) {
+        event.target.nextElementSibling.innerText = quantity - 1;
+        totalCell.innerText = '$' + (dishCost * (quantity - 1)).toFixed(2);
+        totalCostCell.innerText = '$' + (currentTotal - dishCost).toFixed(2);
+      }
+    });
+    
+    // Add an event listener to the "+" button of the new row
+    const plusButton = newRow.querySelector('button:last-of-type');
+    plusButton.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const quantity = parseInt(event.target.previousElementSibling.innerText);
+      event.target.previousElementSibling.innerText = quantity + 1;
+      totalCell.innerText = '$' + (dishCost * (quantity + 1)).toFixed(2);
+      totalCostCell.innerText = '$' + (currentTotal + dishCost).toFixed(2);
+    });
+
+	
+
+
+
+
+  });
+});
+
+	
+
+
+
+
+
+
+
+</script>
 
 
 
