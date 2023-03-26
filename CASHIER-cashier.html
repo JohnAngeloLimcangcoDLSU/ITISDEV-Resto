@@ -94,6 +94,8 @@
 
 
 <script>
+
+let addedDishes = [];
 // Get the "Add" buttons from the "available dishes" list
 const addButtons = document.querySelectorAll('.availableDish li button');
 
@@ -103,6 +105,15 @@ addButtons.forEach(button => {
     // Get the name and price of the selected dish
     const dishName = button.nextElementSibling.innerText;
     const dishPrice = button.nextElementSibling.nextElementSibling.innerText;
+
+	// Check if the dish has already been added
+	if (addedDishes.includes(dishName)) {
+	alert(`${dishName} has already been added to the current orders.`);
+	return;
+    }
+    
+    // Add the dish name to the array of added dishes
+    addedDishes.push(dishName);
     
     // Create a new row in the "current orders" table
     const table = document.querySelector('.currentOrder table tbody');
