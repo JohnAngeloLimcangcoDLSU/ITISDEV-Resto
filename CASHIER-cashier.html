@@ -30,27 +30,27 @@
 		<li>
 			<button class="button">Add</button>
 			<span>Item 1</span>
-			<span>$10.00</span>
+			<span>P10.00</span>
 		</li>
 		<li>
 			<button class="button">Add</button>
 			<span>Item 2</span>
-			<span>$15.00</span>
+			<span>P15.00</span>
 		</li>
 		<li>
 			<button class="button">Add</button>
 			<span>Item 3</span>
-			<span>$20.00</span>
+			<span>P20.00</span>
 		</li>
 		<li>
 			<button class="button">Add</button>
 			<span>Item 4</span>
-			<span>$25.00</span>
+			<span>P25.00</span>
 		</li>
 		<li>
 			<button class="button">Add</button>
 			<span>Item 5</span>
-			<span>$30.00</span>
+			<span>P30.00</span>
 		</li>
 	</ul>
 
@@ -76,15 +76,17 @@
 		<tfoot>
 			<tr>
 				<th colspan="3">Total</th>
-				<th>$100.00</th>
+				<th id="totalCostCell">P0.00</th>
 				<th></th>
 			</tr>
 		</tfoot>
 	</table>
 
-    <button class="button">Checkout</button>
+    <button class="button">Checkout </button>
 
   </div>
+
+  <p>Total cost: <span id="totalCostParagraph">P0.00</span></p>
 
 </div>
 
@@ -126,11 +128,16 @@ addButtons.forEach(button => {
     const actionCell = newRow.insertCell();
     actionCell.innerHTML = '<button class="button">Remove</button>';
     
-    // Update the total cost of the order
-    const totalCostCell = document.querySelector('.currentOrder table tfoot th:last-child');
-    const currentTotal = parseFloat(totalCostCell.innerText.substring(1));
-    const dishCost = parseFloat(dishPrice.substring(1));
-    totalCostCell.innerText = '$' + (currentTotal + dishCost).toFixed(2);
+	// Update the total cost of the order
+	const totalCostCell = document.querySelector('#totalCostCell');
+	const currentTotal = parseFloat(totalCostCell.innerText.substring(1));
+	const dishCost = parseFloat(dishPrice.substring(1));
+	totalCostCell.innerText = 'P' + (currentTotal + dishCost).toFixed(2);
+
+	// Update the total cost in the paragraph element
+	const totalCostParagraph = document.querySelector('#totalCostParagraph');
+	totalCostParagraph.innerText = 'P' + (currentTotal + dishCost).toFixed(2);
+
 
     
     // Add an event listener to the "-" button of the new row
@@ -140,8 +147,8 @@ addButtons.forEach(button => {
       const quantity = parseInt(event.target.nextElementSibling.innerText);
       if (quantity > 1) {
         event.target.nextElementSibling.innerText = quantity - 1;
-        totalCell.innerText = '$' + (dishCost * (quantity - 1)).toFixed(2);
-        totalCostCell.innerText = '$' + (currentTotal - dishCost).toFixed(2);
+        totalCell.innerText = 'P' + (dishCost * (quantity - 1)).toFixed(2);
+        totalCostCell.innerText = 'P' + (currentTotal - dishCost).toFixed(2);
       }
     });
     
@@ -151,8 +158,8 @@ addButtons.forEach(button => {
       event.stopPropagation();
       const quantity = parseInt(event.target.previousElementSibling.innerText);
       event.target.previousElementSibling.innerText = quantity + 1;
-      totalCell.innerText = '$' + (dishCost * (quantity + 1)).toFixed(2);
-      totalCostCell.innerText = '$' + (currentTotal + dishCost).toFixed(2);
+      totalCell.innerText = 'P' + (dishCost * (quantity + 1)).toFixed(2);
+      totalCostCell.innerText = 'P' + (currentTotal + dishCost).toFixed(2);
     });
 
 	
