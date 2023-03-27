@@ -161,8 +161,8 @@ addButtons.forEach(button => {
 		event.target.nextElementSibling.innerText = quantity - 1;
 		const newTotal = (dishCost * (quantity - 1));
 		totalCell.innerText = 'P' + newTotal;
-		totalCostCell.innerText = 'P' + (currentTotal  - newTotal);
-		totalCostParagraph.innerText = 'P' + (currentTotal  - newTotal);
+		totalCostCell.innerText = 'P' + (newTotal   - currentTotal);
+		totalCostParagraph.innerText = 'P' + (newTotal - currentTotal);
 		
 	}
 	});
@@ -189,8 +189,8 @@ addButtons.forEach(button => {
 
 		// Remove the row element
 		row.remove();
-		totalCostCell.innerText = 'P' + (currentTotal - newTotal);
-		totalCostParagraph.innerText = 'P' + (currentTotal - newTotal);
+		totalCostCell.innerText = 'P' + (newTotal - currentTotal);
+		totalCostParagraph.innerText = 'P' + (newTotal - currentTotal);
 		// if (totalCostCell<0 && totalCostParagraph<0){
 		// 	totalCostCell.innerText = 'P' + 0.00;
 		// 	totalCostParagraph.innerText = 'P' + 00;
