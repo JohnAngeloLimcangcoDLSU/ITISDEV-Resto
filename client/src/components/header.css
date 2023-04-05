@@ -1,0 +1,22 @@
+
+.header{
+    position: sticky;
+    text-align: center;
+    border: 1px solid rgb(214,214,214);
+    top: 0px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background: #36AEB0;
+    font-family: Lato, sans-serif;
+    color: white;
+    z-index:1;
+}
+
+h1 {
+  font-family: Lato, sans-serif;
+  color: white;
+  font-size: 30px;
+  display: block;
+  text-align: center;
+}

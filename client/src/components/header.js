@@ -1,7 +1,11 @@
 import React from 'react'
+import './header.css';
+
 
 function header(){
-    return <h1>hellow world</h1>
+    return <div class = "header">
+    <h1>Header Sample</h1>
+  </div>
 }
 
 export default header
