@@ -1,4 +1,5 @@
 import './App.css';
+import header from '/components/header'
 
 function App() {
   return (
@@ -6,6 +7,16 @@ function App() {
       Hello, world!
     </div>
   );
+}
+
+class App extends Component{
+  render(){
+    return(
+      <div className="App">
+        <header/>
+      </div>
+    );
+  }
 }
 
 export default App;
