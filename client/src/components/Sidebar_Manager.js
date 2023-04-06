@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Sidebar.css'
+import clickIMG from '../assets/click-sidebar.png'
 
 function Sidebar() {
   return (
@@ -10,7 +11,7 @@ function Sidebar() {
   </div>
 
   <div class ="sidebar-text">
-    <a href="MANAGER-addIngredientCategory.html"> <img src="../assets/click-sidebar.png" class="click-sidebar"/> Create New Ingredient Category</a>
+    <a href="MANAGER-addIngredientCategory.html"> <img src={clickIMG} class="click-sidebar"/> Create New Ingredient Category</a>
     <br/><br/>
   </div>
 
@@ -19,11 +20,11 @@ function Sidebar() {
   </div>
 
   <div class ="sidebar-text">
-    <a href="MANAGER-viewDish.html"> <img src="click-sidebar.png" class="click-sidebar"/> View All Dishes</a>
+    <a href="MANAGER-viewDish.html"> <img src={clickIMG} class="click-sidebar"/> View All Dishes</a>
     <br/><br/>
-    <a href="MANAGER-addDish.html"> <img src="click-sidebar.png" class="click-sidebar"/> Add Dish</a>
+    <a href="MANAGER-addDish.html"> <img src={clickIMG} class="click-sidebar"/> Add Dish</a>
     <br/><br/>
-    <a href="MANAGER-deleteDish.html"> <img src="click-sidebar.png" class="click-sidebar"/> Delete Dish</a>
+    <a href="MANAGER-deleteDish.html"> <img src={clickIMG} class="click-sidebar"/> Delete Dish</a>
     <br/><br/>
   </div>
 
@@ -33,15 +34,15 @@ function Sidebar() {
   </div>
 
   <div class ="sidebar-text">
-    <a href="MANAGER-viewInventory.html"> <img src="click-sidebar.png" class="click-sidebar"/> View Inventory Report</a>
+    <a href="MANAGER-viewInventory.html"> <img src={clickIMG} class="click-sidebar"/> View Inventory Report</a>
    <br/><br/>
-    <a href="MANAGER-viewInventoryHistory.html"> <img src="click-sidebar.png" class="click-sidebar"/> View Inventory History Report</a>
+    <a href="MANAGER-viewInventoryHistory.html"> <img src={clickIMG} class="click-sidebar"/> View Inventory History Report</a>
     <br/><br/>
-    <a href="MANAGER-viewSpoilage.html"> <img src="click-sidebar.png" class="click-sidebar"/> View Spoilage Report</a>
+    <a href="MANAGER-viewSpoilage.html"> <img src={clickIMG} class="click-sidebar"/> View Spoilage Report</a>
     <br/><br/>
-    <a href="MANAGER-viewDiscrepancy.html"> <img src="click-sidebar.png" class="click-sidebar"/> View Discrepancy Report</a>
+    <a href="MANAGER-viewDiscrepancy.html"> <img src={clickIMG} class="click-sidebar"/> View Discrepancy Report</a>
     <br/><br/>
-    <a href="MANAGER-viewCashier.html"> <img src="click-sidebar.png" class="click-sidebar"/> View Cashier Report</a>
+    <a href="MANAGER-viewCashier.html"> <img src={clickIMG} class="click-sidebar"/> View Cashier Report</a>
     <br/><br/>
   </div>
 
@@ -50,11 +51,11 @@ function Sidebar() {
   </div>
 
   <div class ="sidebar-text">
-    <a href="MANAGER-viewUser.html"> <img src="click-sidebar.png" class="click-sidebar"/> View All Users</a>
+    <a href="MANAGER-viewUser.html"> <img src={clickIMG} class="click-sidebar"/> View All Users</a>
     <br/><br/>
-    <a href="MANAGER-createUser.html"> <img src="click-sidebar.png" class="click-sidebar"/> Add User</a>
+    <a href="MANAGER-createUser.html"> <img src={clickIMG} class="click-sidebar"/> Add User</a>
    <br/><br/>
-   <a href="MANAGER-deleteUser.html"> <img src="click-sidebar.png" class="click-sidebar"/> Delete User</a>
+   <a href="MANAGER-deleteUser.html"> <img src={clickIMG} class="click-sidebar"/> Delete User</a>
    <br/><br/>
   </div>
 
