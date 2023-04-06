@@ -10,7 +10,7 @@ function Sidebar() {
   </div>
 
   <div class ="sidebar-text">
-    <a href="MANAGER-addIngredientCategory.html"> <img src="click-sidebar.png" class="click-sidebar"/> Create New Ingredient Category</a>
+    <a href="MANAGER-addIngredientCategory.html"> <img src="../assets/click-sidebar.png" class="click-sidebar"/> Create New Ingredient Category</a>
     <br/><br/>
   </div>
 
