@@ -1,0 +1,59 @@
+@import 
+url('https://fonts.googleapis.com/css2?family=Lato&display=swap');  
+
+
+.form-content{
+
+  margin: auto;
+  margin-top:100px;
+  width: 50%;
+  border: 3px solid #D9D9D9;
+  padding: 10px;
+ 
+  text-align: center;
+  font-family: Lato, sans-serif;
+  color: black;
+
+
+
+}
+
+.arrowIcon{
+  /* display: flex;
+	position:relative; */
+  width: 20px;
+	height: 20px;
+  
+}
+
+.arrowIcon:hover{
+  transform: rotate(180deg);
+}
+
+form{
+  font-family: Lato, sans-serif;
+  color: black;
+  
+  font-size: 30px;
+  display: block;
+}
+
+
+table {
+  font-family: Lato, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td, th {
+  border: 2px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}

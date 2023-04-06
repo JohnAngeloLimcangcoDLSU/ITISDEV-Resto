@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header'
 import Sidebar_Manager from './components/Sidebar_Manager'
+import MANAGER_viewDish from './pages/MANAGER_viewDish';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
       <Router>
         <Header />
         <Sidebar_Manager />
+        <MANAGER_viewDish />
+        
       </Router>
     </div>
   );
