@@ -3,31 +3,31 @@ import '../styles/MANAGER_addDish.css'
 
 function MANAGER_addDish() {
 
-    // Get the "Add Ingredient" button and the ingredient row
-    const addRowBtn = document.querySelector(".add-row-btn");
-    const ingredientRow = document.querySelector(".ingredient-row");
+    // // Get the "Add Ingredient" button and the ingredient row
+    // const addRowBtn = document.querySelector(".add-row-btn");
+    // const ingredientRow = document.querySelector(".ingredient-row");
   
-    // Add event listener to "Add Ingredient" button
-    addRowBtn.addEventListener("click", () => {
-      // Create a new ingredient row by cloning the existing one
-      const newRow = ingredientRow.cloneNode(true);
+    // // Add event listener to "Add Ingredient" button
+    // addRowBtn.addEventListener("click", () => {
+    //   // Create a new ingredient row by cloning the existing one
+    //   const newRow = ingredientRow.cloneNode(true);
   
-      // Clear the values of the cloned row's inputs
-      newRow.querySelector("#ingredient").value = "";
-      newRow.querySelector("#quantity").value = "";
-      newRow.querySelector("#unit").value = "";
+    //   // Clear the values of the cloned row's inputs
+    //   newRow.querySelector("#ingredient").value = "";
+    //   newRow.querySelector("#quantity").value = "";
+    //   newRow.querySelector("#unit").value = "";
   
-      // Add the new row to the form
-      ingredientRow.parentNode.insertBefore(newRow, addRowBtn);
-    });
+    //   // Add the new row to the form
+    //   ingredientRow.parentNode.insertBefore(newRow, addRowBtn);
+    // });
   
-    // Add event listener to "Remove Row" buttons
-    const removeRowBtns = document.querySelectorAll(".remove-row-btn");
-    removeRowBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.parentNode.remove();
-      });
-    });
+    // // Add event listener to "Remove Row" buttons
+    // const removeRowBtns = document.querySelectorAll(".remove-row-btn");
+    // removeRowBtns.forEach(btn => {
+    //   btn.addEventListener("click", () => {
+    //     btn.parentNode.remove();
+    //   });
+    // });
 
     //Doesnt fully work, sometimes makes the whole screen empty. When it does works, adding ingredient prints itself twice and the delete button doesnt work
 
