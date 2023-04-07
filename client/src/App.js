@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './components/Header'
-import Sidebar_Manager from './components/Sidebar_Manager'
-import MANAGER_viewDish from './pages/MANAGER_viewDish';
+import Sidebar from './components/Sidebar'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 function App() {
@@ -9,9 +8,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Sidebar_Manager />
-        <MANAGER_viewDish />
-        
+        <Sidebar />
       </Router>
     </div>
   );
