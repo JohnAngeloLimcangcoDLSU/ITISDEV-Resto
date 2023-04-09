@@ -87,3 +87,19 @@
 
 
   })
+
+
+
+
+
+  	const plusButton = newRow.querySelector('button:last-of-type');
+	plusButton.addEventListener('click', (event) => {
+    console.log("plus");
+	event.stopPropagation();
+	const quantity = parseInt(event.target.previousElementSibling.innerText);
+	event.target.previousElementSibling.innerText = quantity + 1;
+	const newTotal = (dishCost * (quantity + 1));
+	totalCell.innerText = 'P' + newTotal;
+	totalCostCell.innerText = 'P' + (currentTotal  + newTotal);
+	totalCostParagraph.innerText = 'P' + (currentTotal  + newTotal);
+	});

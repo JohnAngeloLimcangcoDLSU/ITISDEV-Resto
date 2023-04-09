@@ -10,6 +10,7 @@ import MANAGER_createUser from './pages/MANAGER_createUser';
 import MANAGER_viewUser from './pages/MANAGER_viewUser';
 import STOCK_inputFirstPurchaseIngredient from './pages/STOCK_inputFirstPurchaseIngredient';
 import Cashier from './pages/Cashier';
+import Units from './pages/Units';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Router>
         <Header />
         <Sidebar />
-        <Cashier />
+        <Units />
 
       </Router>
     </div>
