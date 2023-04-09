@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header'
-import Sidebar_Manager from './components/Sidebar_Manager'
+import Sidebar from './components/Sidebar'
 import MANAGER_viewDish from './pages/MANAGER_viewDish';
 import MANAGER_addDish from './pages/MANAGER_addDish';
 import MANAGER_deleteDish from './pages/MANAGER_deleteDish';
@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Sidebar_Manager />
+        <Sidebar />
         <STOCK_inputFirstPurchaseIngredient />
         <Routes> 
           <Route path="/" exact component={MANAGER_viewDish }/>
