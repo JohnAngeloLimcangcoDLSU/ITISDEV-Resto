@@ -6,7 +6,6 @@ function MANAGER_viewDish() {
     
 <div class="form-content">
   <h1>Available Dishes in the Menu</h1>
-  
 
   <table>
     <tr>

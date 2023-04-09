@@ -9,7 +9,7 @@ function Header() {
             <h1>Resto</h1>
         </div>
         <div className='headerUser'>
-            <h2>Manager</h2>
+            <h2>User</h2>
             <PersonIcon />
         </div>
     </div>

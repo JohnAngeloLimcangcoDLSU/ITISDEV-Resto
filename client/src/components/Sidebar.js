@@ -1,9 +1,7 @@
 import React from 'react'
 import '../styles/Sidebar.css'
-import { SidebarData_Manager } from './SidebarData_Manager'
-import { SidebarData_StockController } from './SidebarData_StockController'
-import {Link} from 'react-router-dom'
-import clickIMG from '../assets/click-sidebar.png'
+import { SidebarData_Manager } from '../helpers/SidebarData_Manager'
+import { SidebarData_StockController } from '../helpers/SidebarData_StockController'
 
 function Sidebar() {
   return (
