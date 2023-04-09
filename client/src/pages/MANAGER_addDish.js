@@ -5,32 +5,31 @@ function MANAGER_addDish() {
 
   useEffect(() => {
 
-    // Get the "Add Ingredient" button and the ingredient row
-    const addRowBtn = document.querySelector(".add-row-btn");
-    const ingredientRow = document.querySelector(".ingredient-row");
-  
-    // Add event listener to "Add Ingredient" button
-    addRowBtn.addEventListener("click", () => {
-      // Create a new ingredient row by cloning the existing one
-      const newRow = ingredientRow.cloneNode(true);
-  
-      // Clear the values of the cloned row's inputs
-      newRow.querySelector("#ingredient").value = "";
-      newRow.querySelector("#quantity").value = "";
-      newRow.querySelector("#unit").value = "";
-  
-      // Add the new row to the form
-      ingredientRow.parentNode.insertBefore(newRow, addRowBtn);
+   // Get the "Add Ingredient" button and the ingredient row
+  const addRowBtn = document.querySelector(".add-row-btn");
+  const ingredientRow = document.querySelector(".ingredient-row");
+
+  // Add event listener to "Add Ingredient" button
+  addRowBtn.addEventListener("click", () => {
+    // Create a new ingredient row by cloning the existing one
+    const newRow = ingredientRow.cloneNode(true);
+
+    // Clear the values of the cloned row's inputs
+    newRow.querySelector("#ingredient").value = "";
+    newRow.querySelector("#quantity").value = "";
+    newRow.querySelector("#unit").value = "";
+
+    // Add the new row to the form
+    ingredientRow.parentNode.insertBefore(newRow, addRowBtn);
+  });
+
+  // Add event listener to "Remove Row" buttons
+  const removeRowBtns = document.querySelectorAll(".remove-row-btn");
+  removeRowBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.parentNode.remove();
     });
-  
-    // Add event listener to "Remove Row" buttons
-    const removeRowBtns = document.querySelectorAll(".remove-row-btn");
-    removeRowBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        btn.parentNode.remove();
-        
-      });
-    });
+  });
 
   })
 
@@ -48,12 +47,12 @@ function MANAGER_addDish() {
     <form/>
       <div className="form-group">
         <label htmlFor="dish-name">Dish Name:</label>
-        <input type="text" id="dish-name" name="dish-name" required />
+        <input type="text" id="dish-name" name="dish-name"  />
         <br/><br/>
       </div>
       <div className="form-group">
         <label htmlFor="dish-price">Dish Price:</label>
-        <input type="number" id="dish-price" name="dish-price" step="0.01" min="0" required />
+        <input type="number" id="dish-price" name="dish-price" step="0.01" min="0"  />
         <br/>
       </div>
       <hr/>
@@ -69,7 +68,7 @@ function MANAGER_addDish() {
         </div>
         <div className="form-group">
           <label htmlFor="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" step="0.01" min="0" required />
+          <input type="number" id="quantity" name="quantity" step="0.01" min="0"  />
         </div>
         <div className="form-group">
           <label htmlFor="unit">Unit:</label>

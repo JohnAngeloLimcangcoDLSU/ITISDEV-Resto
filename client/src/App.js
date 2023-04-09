@@ -17,8 +17,8 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Sidebar />
-        <Units />
+        {/* <Sidebar /> */}
+        <MANAGER_addDish />
 
       </Router>
     </div>
