@@ -10,52 +10,6 @@ url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
     --text-link: #003469;
 }
 
-.header{
-    position: sticky;
-    text-align: center;
-    border: 1px solid rgb(214,214,214);
-    top: 0px;
-    margin-top: -10px;
-    margin-left: -10px;
-    margin-right: -10px;
-    background: #36AEB0;
-    font-family: Lato, sans-serif;
-    color: white;
-    z-index:1;
-}
-
-.sidebar {
-height: 100%;
-width: 350px;
-position: absolute;
-left: 0;
-top: 0;
-padding-top: 100px;
-background-color: #D9D9D9;
-
-}
-
-.sidebar-text{
-  font-family: Lato, sans-serif;
-  color: black;
-  
-  padding-left: 50px;
-  font-size: 24px;
-  display: block;
-}
-
-.sidebar-category{
-  font-size: 24px;
-  font-family: Lato, sans-serif;
-  padding-left: 10px;
-color: black;
-opacity: 50%;
-}
-
-.click-sidebar{
-  width: 40px;
-	height: 40px;
-}
 
 .form-content{
 

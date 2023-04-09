@@ -7,6 +7,7 @@ import MANAGER_deleteDish from './pages/MANAGER_deleteDish';
 import MANAGER_addIngredientCategory from './pages/MANAGER_addIngredientCategory';
 import MANAGER_createUser from './pages/MANAGER_createUser';
 import MANAGER_viewUser from './pages/MANAGER_viewUser';
+import STOCK_inputFirstPurchaseIngredient from './pages/STOCK_inputFirstPurchaseIngredient';
 import Cashier from './pages/Cashier';
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
@@ -17,7 +18,7 @@ function App() {
       <Router>
         <Header />
         <Sidebar_Manager />
-        <Cashier />
+        <STOCK_inputFirstPurchaseIngredient />
         <Routes> 
           <Route path="/" exact component={MANAGER_viewDish }/>
 
