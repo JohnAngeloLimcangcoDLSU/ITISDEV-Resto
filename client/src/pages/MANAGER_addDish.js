@@ -5,8 +5,6 @@ function MANAGER_addDish() {
 
   useEffect(() => {
 
-
-
     // Get the "Add Ingredient" button and the ingredient row
     const addRowBtn = document.querySelector(".add-row-btn");
     const ingredientRow = document.querySelector(".ingredient-row");
@@ -30,6 +28,7 @@ function MANAGER_addDish() {
     removeRowBtns.forEach(btn => {
       btn.addEventListener("click", () => {
         btn.parentNode.remove();
+        
       });
     });
 

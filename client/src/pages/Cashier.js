@@ -13,6 +13,10 @@ const addButtons = document.querySelectorAll('.availableDish li button');
 // Add an event listener to each "Add" button
 addButtons.forEach(button => {
   button.addEventListener('click', () => {
+    
+    
+    console.log("Hello world!");
+    
     // Get the name and price of the selected dish
     const dishName = button.nextElementSibling.innerText;
     const dishPrice = button.nextElementSibling.nextElementSibling.innerText;
@@ -39,16 +43,16 @@ addButtons.forEach(button => {
     
     const quantityCell = newRow.insertCell();
     quantityCell.innerHTML = `
-      <button className="button">-</button>
+      <button class="button">-</button>
       <span>1</span>
-      <button className="button">+</button>
+      <button class="button">+</button>
     `;
     
     const totalCell = newRow.insertCell();
     totalCell.innerText = dishPrice;
     
     const actionCell = newRow.insertCell();
-    actionCell.innerHTML = '<button className="remove-button">Remove</button>';
+    actionCell.innerHTML = '<button class="remove-button">Remove</button>';
     
 	// Update the total cost of the order
 	const totalCostCell = document.querySelector('#totalCostCell');
@@ -64,6 +68,7 @@ addButtons.forEach(button => {
 		// Add an event listener to the "-" button of the new row
 	const minusButton = newRow.querySelector('button:first-of-type');
 	minusButton.addEventListener('click', (event) => {
+    console.log("minus");
 	event.stopPropagation();
 	
 	
@@ -81,6 +86,7 @@ addButtons.forEach(button => {
 	// Add an event listener to the "+" button of the new row
 	const plusButton = newRow.querySelector('button:last-of-type');
 	plusButton.addEventListener('click', (event) => {
+    console.log("plus");
 	event.stopPropagation();
 	const quantity = parseInt(event.target.previousElementSibling.innerText);
 	event.target.previousElementSibling.innerText = quantity + 1;
@@ -94,6 +100,7 @@ addButtons.forEach(button => {
 	
 	removeButtons.forEach(button => {
   	button.addEventListener('click', () => {
+      console.log("remove");
     // Get the parent element of the button, which is the row element
     const row = button.parentNode.parentNode;
 	const newTotal = (dishCost)
@@ -110,11 +117,13 @@ addButtons.forEach(button => {
 	});
 
   });
-  
+  //
+
 });
+//
 
 
-
+return;
   })
   
 
