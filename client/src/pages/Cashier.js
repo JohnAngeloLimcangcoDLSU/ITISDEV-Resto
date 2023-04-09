@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../styles/Cashier.css'
 
 function Cashier() {
 
-    
+  useEffect(() => {
+
+      
 let addedDishes = [];
 // Get the "Add" buttons from the "available dishes" list
 const addButtons = document.querySelectorAll('.availableDish li button');
@@ -111,6 +113,10 @@ addButtons.forEach(button => {
   
 });
 
+
+
+  })
+  
 
   return (
   

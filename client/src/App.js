@@ -9,7 +9,7 @@ import MANAGER_addIngredientCategory from './pages/MANAGER_addIngredientCategory
 import MANAGER_createUser from './pages/MANAGER_createUser';
 import MANAGER_viewUser from './pages/MANAGER_viewUser';
 import STOCK_inputFirstPurchaseIngredient from './pages/STOCK_inputFirstPurchaseIngredient';
-// import Cashier from './pages/Cashier';
+import Cashier from './pages/Cashier';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Router>
         <Header />
         <Sidebar />
-        <MANAGER_addDish />
+        <Cashier />
 
       </Router>
     </div>
