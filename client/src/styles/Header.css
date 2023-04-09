@@ -4,6 +4,8 @@
     background-color: #36AEB0;
     display: flex;
     flex-direction: row;
+    z-index:1;
+
   }
 
 .header .headerTitle {
