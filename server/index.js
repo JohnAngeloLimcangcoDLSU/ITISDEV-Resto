@@ -57,3 +57,7 @@ app.post('/register', (req, res) => {
             }
         )   
 })
+
+app.listen (3005, () => {
+    console.log('running server')
+})
