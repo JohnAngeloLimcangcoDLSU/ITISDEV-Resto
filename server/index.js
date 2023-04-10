@@ -44,11 +44,11 @@ const db = mysql2.createConnection({
 //Query for user registration
 app.post('/makeIngCat', (req, res) => {
 
-    const category = req.body.category_id
+    const category = req.body.category
 
-        if (err) {
-            console.log(err)
-        }
+        // if (err) {
+        //     console.log(err)
+        // }
         db.query(
             "INSERT INTO categories (category) VALUES (?)", 
             [category],
