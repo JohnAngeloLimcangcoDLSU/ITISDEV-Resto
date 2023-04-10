@@ -76,6 +76,20 @@ app.post('/makeUnits', (req, res) => {
         )   
 })
 
+app.post('/getCategory', (req, res) => {
+    const category = req.body.category
+
+        // if (err) {
+        //     console.log(err)
+        // }
+        db.query(
+            'SELECT category FROM categories; ,
+            (err, result) => {
+                console.log(err)
+            }
+        )   
+})
+
 app.listen (3001, () => {
     console.log('running server')
 })
