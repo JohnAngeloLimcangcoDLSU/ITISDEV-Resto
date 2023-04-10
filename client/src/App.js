@@ -12,6 +12,7 @@ import MANAGER_deleteUser from './pages/MANAGER_deleteUser';
 import STOCK_inputFirstPurchaseIngredient from './pages/STOCK_inputFirstPurchaseIngredient';
 import Cashier from './pages/Cashier';
 import Units from './pages/Units';
+import Login from './pages/Login';
 
 function App() {
   return (

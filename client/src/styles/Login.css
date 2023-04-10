@@ -1,0 +1,233 @@
+@import 
+url('https://fonts.googleapis.com/css2?family=Lato&display=swap');  
+
+:root {
+    --primary: #3e48a9;
+    --accent: #f9bbd0;
+    --text-primary: #ffffff;
+    --text-accent: #000000;
+    --text-subtle: #000000;
+    --text-link: #003469;
+}
+
+.header{
+    position: sticky;
+    text-align: center;
+    border: 1px solid rgb(214,214,214);
+    top: 0px;
+    margin: -10px;
+    background: #36AEB0;
+    font-family: Lato, sans-serif;
+    color: white;
+}
+
+.LogInContent{
+	position: absolute;
+	width: 100%;
+	height: 726px;
+	top: 143px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: Lato, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 50px;
+
+	align-items: center;
+	text-align: center;
+	align-content: center;
+
+	color: #323650;
+}
+
+.LogInHeading
+{
+	position: absolute;
+	width: 100%;
+	height: 243px;
+	left: 0px;
+	top: 0px;
+	font-style: normal;
+	background-color: #36AEB0;
+
+}
+
+.LogInHeading1
+{
+	position: relative;
+	top: -70px;
+	font-size: 94px;
+	font-weight: 600;
+	line-height: 118px;
+	text-align: center;
+	font-family: Lato, sans-serif;
+  color: white;
+}
+
+.LogInHeading2
+{
+	position: relative;
+  top: -190px;
+	font-size: 44px;
+	font-weight: 500;
+	line-height: 118px;
+	text-align: center;
+	font-family: Lato, sans-serif;
+  color: white;
+}
+
+
+div.LogInUsername
+{
+
+	margin-top: 63px;
+	margin-bottom: 39px;
+	position: relative;
+	width: 428px;
+	height: 61px;
+	background: #D9D9D9;
+	border-radius: 0px 21px 21px 0px;
+	left: 36px;
+	border: 0px solid #000000;
+}
+
+div.LogInPassword
+{
+
+	margin-bottom: 104px;
+	position: relative;
+	width: 428px;
+	height: 61px;
+	background: #D9D9D9;
+	border-radius: 0px 21px 21px 0px;
+	left: 36px;
+	border: 0px solid #000000;
+}
+
+.LogInUsername
+{
+	display: flex;
+	font-size: 30px;
+	position: relative;
+	width: 428px;
+	background: #D9D9D9;
+	border-radius: 0px 21px 21px 0px;
+	border-left: 0px;
+	border: 0px solid #000000;
+	text-indent: 10px;
+}
+
+.LogInPassword
+{
+	display: flex;
+	font-size: 30px;
+	position: relative;
+	width: 428px;
+	background: #D9D9D9;
+	border-radius: 0px 21px 21px 0px;
+	border-left: 0px;
+	border: 0px solid #000000;
+	text-indent: 10px;
+}
+
+div.UsernameIcon
+{
+	display: flex;
+	position: absolute;
+	width: 72px;
+	height: 61px;
+	left: -72px;
+	background: #36AEB0;
+	border-radius: 8px 0px 0px 8px;
+	border: 0px solid #000000;
+	align-items: center;
+	justify-content: center;
+}
+
+div.PasswordIcon
+{
+	display: flex;
+	position: absolute;
+	width: 72px;
+	height: 61px;
+	left: -72px;
+	background: #36AEB0;
+	border-radius: 8px 0px 0px 8px;
+	border: 0px solid #000000;
+	align-items: center;
+	justify-content: center;
+}
+
+.UsernameIcon
+{
+	box-sizing: border-box;
+	position: absolute;
+	width: 37px;
+	height: 37px;
+	background: #36AEB0;
+	border-radius: 8px 0px 0px 8px;
+	border: 0px solid #000000;
+}
+
+.PasswordIcon
+{
+	box-sizing: border-box;
+	position: absolute;
+	width: 37px;
+	height: 37px;
+	background: #36AEB0;
+	border-radius: 8px 0px 0px 8px;
+	border: 0px solid #000000;
+
+}
+
+.loginbtn
+{
+	font-size: 27px;
+	line-height: 38px;
+	color: #FFFFFF;
+	left: 0px;
+	position: relative;
+	width: 164px;
+	height: 54px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #36AEB0;
+	border-radius: 30px;
+	border: 0px solid #000000;
+}
+
+
+table {
+    font-family: Lato, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .login{
+    font-family: Lato, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  
+
