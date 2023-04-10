@@ -7,18 +7,22 @@ function MANAGER_addIngredientCategory() {
 
   const [userCreate, idInput] = useState('')
   const [categoryCreate, ingredientCategory] = useState('')
-  const [userIDCreate, userID] = useState('')
+
+  // idInput = Math.random()
+var idNum;
+
+idNum = Math.floor(Math.random() * 999) + 1
  
   const [id, SetuserInput] = useState('')
   const [category, setCategory] = useState('')
-  const [user_ID, setuserID] = useState('')
+
 
   Axios.defaults.withCredentials = true
 
   const makeIngCat = () => {
     console.log("inside makeIngCat")
     Axios.post('http://localhost:3001/makeIngCat',
-    {id: userCreate,category: categoryCreate, user_ID: userIDCreate}
+    {id: idNum,category: categoryCreate}
     ).then((response) => {
     console.log(response)
     })
@@ -45,8 +49,7 @@ function MANAGER_addIngredientCategory() {
   <br/><br/>
   <label htmlFor="ingredientCategory">Ingredient Category Name:</label>
   <input type='text' onChange={(e) => {ingredientCategory(e.target.value)}}/>
-  <input type='text' onChange={(e) => {idInput(e.target.value)}}/>
-  <input type='text' onChange={(e) => {userID(e.target.value)}}/>
+
   <br/><br/>
   <button onClick={makeIngCat}>Submit</button>
 
