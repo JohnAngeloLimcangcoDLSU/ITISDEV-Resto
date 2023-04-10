@@ -18,7 +18,7 @@ function App() {
       <Router>
         <Header />
         {/* <Sidebar /> */}
-        <MANAGER_addDish />
+        <MANAGER_addIngredientCategory />
 
       </Router>
     </div>
