@@ -5,15 +5,20 @@ import '../styles/MANAGER_addIngredientCategory.css'
 
 function MANAGER_addIngredientCategory() {
 
+  const [userCreate, idInput] = useState('')
   const [categoryCreate, ingredientCategory] = useState('')
+  const [userIDCreate, userID] = useState('')
+ 
+  const [id, SetuserInput] = useState('')
   const [category, setCategory] = useState('')
+  const [user_ID, setuserID] = useState('')
 
   Axios.defaults.withCredentials = true
 
   const makeIngCat = () => {
     console.log("inside makeIngCat")
     Axios.post('http://localhost:3001/makeIngCat',
-    {category: categoryCreate}
+    {id: userCreate,category: categoryCreate, user_ID: userIDCreate}
     ).then((response) => {
     console.log(response)
     })
@@ -40,6 +45,8 @@ function MANAGER_addIngredientCategory() {
   <br/><br/>
   <label htmlFor="ingredientCategory">Ingredient Category Name:</label>
   <input type='text' onChange={(e) => {ingredientCategory(e.target.value)}}/>
+  <input type='text' onChange={(e) => {idInput(e.target.value)}}/>
+  <input type='text' onChange={(e) => {userID(e.target.value)}}/>
   <br/><br/>
   <button onClick={makeIngCat}>Submit</button>
 
