@@ -42,7 +42,7 @@ const db = mysql2.createConnection({
 
 
 //Query for user registration
-app.post('/register', (req, res) => {
+app.post('/makeIngCat', (req, res) => {
 
     const category = req.body.category_id
 

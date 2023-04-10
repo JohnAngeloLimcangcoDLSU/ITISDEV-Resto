@@ -9,8 +9,8 @@ function MANAGER_addIngredientCategory() {
 
   Axios.defaults.withCredentials = true
 
-  const register = () => {
-    Axios.post('http://localhost:3306/register',
+  const makeIngCat = () => {
+    Axios.post('http://localhost:3306/makeIngCat',
     {category: ingredientCategory}
     ).then((response) => {
     console.log(response)
@@ -37,9 +37,9 @@ function MANAGER_addIngredientCategory() {
   <h1>Input an new Ingredient Category type below</h1>
   <br/><br/>
   <label htmlFor="ingredientCategory">Ingredient Category Name:</label>
-  <input type='text' onChange={(e) => {category(e.target.value)}}/>
+  <input type='text' onChange={(e) => {ingredientCategory(e.target.value)}}/>
   <br/><br/>
-  <button onClick={register}>Submit</button>
+  <button onClick={makeIngCat}>Submit</button>
 
 </div>
 
