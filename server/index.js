@@ -41,7 +41,6 @@ const db = mysql2.createConnection({
 })
 
 
-//Query for user registration
 app.post('/makeIngCat', (req, res) => {
     const id = req.body.id
     const category = req.body.category
@@ -53,6 +52,24 @@ app.post('/makeIngCat', (req, res) => {
         db.query(
             "INSERT INTO categories (id, category) VALUES (?,?)", 
             [id, category],
+            (err, result) => {
+                console.log(err)
+            }
+        )   
+})
+
+
+app.post('/makeUnits', (req, res) => {
+    const id = req.body.id
+    const unit = req.body.unit
+    const unit_name = req.body.unit_name
+
+        // if (err) {
+        //     console.log(err)
+        // }
+        db.query(
+            "INSERT INTO units (id, unit, unit_name) VALUES (?,?,?)", 
+            [id, unit, unit_name],
             (err, result) => {
                 console.log(err)
             }

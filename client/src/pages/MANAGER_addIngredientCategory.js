@@ -5,7 +5,7 @@ import '../styles/MANAGER_addIngredientCategory.css'
 
 function MANAGER_addIngredientCategory() {
 
-  const [userCreate, idInput] = useState('')
+  // const [userCreate, idInput] = useState('')
   const [categoryCreate, ingredientCategory] = useState('')
 
   // idInput = Math.random()
