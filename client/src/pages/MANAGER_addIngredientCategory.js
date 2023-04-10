@@ -5,13 +5,15 @@ import '../styles/MANAGER_addIngredientCategory.css'
 
 function MANAGER_addIngredientCategory() {
 
-  const [category, ingredientCategory] = useState('')
+  const [categoryCreate, ingredientCategory] = useState('')
+  const [category, setCategory] = useState('')
 
   Axios.defaults.withCredentials = true
 
   const makeIngCat = () => {
+    console.log("inside makeIngCat")
     Axios.post('http://localhost:3306/makeIngCat',
-    {category: ingredientCategory}
+    {category: categoryCreate}
     ).then((response) => {
     console.log(response)
     })
