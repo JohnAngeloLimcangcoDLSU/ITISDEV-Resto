@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/MANAGER_deleteUser.ccs'
+import '../styles/MANAGER_createUser.css'
 
 function MANAGER_deleteUser() {
     return (
