@@ -36,7 +36,7 @@ app.use(session({
 const db = mysql2.createConnection({
     user: 'root',
     host: 'localhost',
-    password: 'rusherdragger',
+    password: '802Sonria!',
     database: 'inventory'
 })
 
@@ -58,6 +58,6 @@ app.post('/register', (req, res) => {
         )   
 })
 
-app.listen (3005, () => {
+app.listen (3306, () => {
     console.log('running server')
 })
