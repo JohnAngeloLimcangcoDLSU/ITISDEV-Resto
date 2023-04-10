@@ -12,7 +12,7 @@ function MANAGER_addIngredientCategory() {
 
   const makeIngCat = () => {
     console.log("inside makeIngCat")
-    Axios.post('http://localhost:3306/makeIngCat',
+    Axios.post('http://localhost:3001/makeIngCat',
     {category: categoryCreate}
     ).then((response) => {
     console.log(response)

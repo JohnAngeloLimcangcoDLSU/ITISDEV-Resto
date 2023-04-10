@@ -58,6 +58,6 @@ app.post('/makeIngCat', (req, res) => {
         )   
 })
 
-app.listen (3306, () => {
+app.listen (3001, () => {
     console.log('running server')
 })
