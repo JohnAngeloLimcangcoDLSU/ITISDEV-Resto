@@ -28,6 +28,7 @@ function App() {
           <Route path='/adduser' element={<MANAGER_createUser />} />
           <Route path='/viewusers' element={<MANAGER_viewUser />} />
           <Route path='/deleteuser' element={<MANAGER_deleteUser />} />
+          <Route path='/inputFirstPurchaseIngredient' element={<STOCK_inputFirstPurchaseIngredient />} />
           <Route path='/cashier' element={<Cashier />} />
           <Route path='/units' element={<Units />} />
         </Routes>

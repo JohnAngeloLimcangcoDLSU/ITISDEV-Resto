@@ -1,30 +1,67 @@
-import React from "react"
+import React from 'react'
+import {useState, useEffect} from 'react'
+import Axios from 'axios'
 import '../styles/STOCK-inputFirstPurchaseIngredient.css'
 
 function STOCK_inputFirstPurchaseIngredient() {
 
+    Axios.defaults.withCredentials = true
+
+    const [category, ingredientCategory] = useState('')
+ 
+
+
+    //   const getCategory = () => {
+    //     console.log("inside makeIngCat")
+    //     Axios.get('http://localhost:3001/getCategory')
+    //     .then((response) => {
+    //     console.log(response)
+    //     })
+    // }
+
+    
+    useEffect(() => {
+        getCategory();
+        console.log(getCategory)
+      },[])
+
+    const getCategory = () => {
+        console.log("inside getCategory")
+        Axios.get('http://localhost:3001/getCategory')
+        .then((response) => {
+        const allCategory = response.data.category.allCategory;
+        ingredientCategory (allCategory)
+        })
+
+        .catch(error => console.error('Error: ${error}'));
+
+        
+    }
+  
+    
+
     return (
 
-        <div class="form-content">
+        
+
+        <div className="form-content">
             <h1>Input first purchase of ingredients to the list</h1>
             <br />
 
             <form action="/action_page.php">
 
-                <label for="ingredientName">Ingredient Category:</label>
+                <label htmlFor="ingredientName">Ingredient Category:</label>
                 <select name="ingredientName" id="ingredientName">
-                    <option value="banana">Banana</option>
-                    <option value="apple">Apple</option>
-                    <option value="tuna">Tuna</option>
-                    <option value="coke">Coke</option>
+                <option value="1">{getCategory}</option>
+                 
                 </select>
 
                 <br /><br />
 
-                <label for="brand">Brand:</label>
+                <label htmlFor="brand">Brand:</label>
                 <input type="text" id="brand" name="brand" /><br /><br />
 
-                    <label for="quantity">Quantity per item:</label>
+                    <label htmlFor="quantity">Quantity per item:</label>
                     <input type="text" id="quantity" name="quantity" />
 
                         <select name="unit" id="unit">
@@ -39,7 +76,7 @@ function STOCK_inputFirstPurchaseIngredient() {
 
                         <br /><br />
 
-                            <label for="itemBought">Number of item/s bought:</label>
+                            <label htmlFor="itemBought">Number of item/s bought:</label>
                             <input type="text" id="itemBought" name="itemBought" />
 
                                 <br /><br />
