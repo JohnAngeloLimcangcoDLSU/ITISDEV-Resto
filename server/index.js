@@ -42,7 +42,7 @@ const db = mysql2.createConnection({
 
 
 app.post('/makeIngCat', (req, res) => {
-    const id = req.body.id
+    
     const category = req.body.category
    
 
@@ -50,8 +50,8 @@ app.post('/makeIngCat', (req, res) => {
         //     console.log(err)
         // }
         db.query(
-            "INSERT INTO categories (id, category) VALUES (?,?)", 
-            [id, category],
+            "INSERT INTO categories (category) VALUES (?)", 
+            [category],
             (err, result) => {
                 console.log(err)
             }
@@ -60,7 +60,7 @@ app.post('/makeIngCat', (req, res) => {
 
 
 app.post('/makeUnits', (req, res) => {
-    const id = req.body.id
+    // const id = req.body.id
     const unit = req.body.unit
     const unit_name = req.body.unit_name
 
@@ -68,27 +68,27 @@ app.post('/makeUnits', (req, res) => {
         //     console.log(err)
         // }
         db.query(
-            "INSERT INTO units (id, unit, unit_name) VALUES (?,?,?)", 
-            [id, unit, unit_name],
+            "INSERT INTO units (unit, unit_name) VALUES (?,?)", 
+            [unit, unit_name],
             (err, result) => {
                 console.log(err)
             }
         )   
 })
 
-app.post('/getCategory', (req, res) => {
-    const category = req.body.category
+// app.post('/getCategory', (req, res) => {
+//     const category = req.body.category
 
-        // if (err) {
-        //     console.log(err)
-        // }
-        db.query(
-            'SELECT category FROM categories; ,
-            (err, result) => {
-                console.log(err)
-            }
-        )   
-})
+//         // if (err) {
+//         //     console.log(err)
+//         // }
+//         db.query(
+//             'SELECT category FROM categories; ,
+//             (err, result) => {
+//                 console.log(err)
+//             }
+//         )   
+// })
 
 app.listen (3001, () => {
     console.log('running server')

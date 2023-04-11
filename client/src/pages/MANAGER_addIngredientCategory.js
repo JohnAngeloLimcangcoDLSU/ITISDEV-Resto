@@ -22,7 +22,7 @@ idNum = Math.floor(Math.random() * 999) + 1
   const makeIngCat = () => {
     console.log("inside makeIngCat")
     Axios.post('http://localhost:3001/makeIngCat',
-    {id: idNum,category: categoryCreate}
+    {category: categoryCreate}
     ).then((response) => {
     console.log(response)
     })

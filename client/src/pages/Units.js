@@ -10,14 +10,14 @@ function Units() {
   const [unitNameCreate, unitNameInput] = useState('')
 
 
-  // idInput = Math.random()
-var idNum;
+//   // idInput = Math.random()
+// var idNum;
 
-idNum = Math.floor(Math.random() * 999) + 1
+// idNum = Math.floor(Math.random() * 999) + 1
  
-  const [id, SetID] = useState('')
-  const [unit, setUnit] = useState('')
-  const [unit_name, setUnitName] = useState('')
+//   const [id, SetID] = useState('')
+//   const [unit, setUnit] = useState('')
+//   const [unit_name, setUnitName] = useState('')
 
 
   Axios.defaults.withCredentials = true
@@ -25,7 +25,7 @@ idNum = Math.floor(Math.random() * 999) + 1
   const makeUnits = () => {
     console.log("inside makeUnits")
     Axios.post('http://localhost:3001/makeUnits',
-    {id: idNum,unit: unitCreate, unit_name: unitNameCreate}
+    {unit: unitCreate, unit_name: unitNameCreate}
     ).then((response) => {
     console.log(response)
     })
