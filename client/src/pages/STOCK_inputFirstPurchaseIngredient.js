@@ -43,7 +43,6 @@ function STOCK_inputFirstPurchaseIngredient() {
             <h1>Input first purchase of ingredients to the list</h1>
             <br />
 
-            <form action="/action_page.php">
 
             <label htmlFor="brand">Ingredient Category:</label>
 
@@ -81,11 +80,7 @@ function STOCK_inputFirstPurchaseIngredient() {
 
                                 <br /><br />
 
-                                    <input type="submit" value="Submit" />
-                                    </form>
-
-
-
+                                    <input type="submit" value="Submit" />    
 
                 </div>
 

@@ -54,6 +54,7 @@ app.post('/makeIngCat', (req, res) => {
             [category],
             (err, result) => {
                 console.log(err)
+                console.log(result)
             }
         )   
 })
@@ -72,6 +73,7 @@ app.post('/makeUnits', (req, res) => {
             [unit, unit_name],
             (err, result) => {
                 console.log(err)
+                console.log(result)
             }
         )   
 })
