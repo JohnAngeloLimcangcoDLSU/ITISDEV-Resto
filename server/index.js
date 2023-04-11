@@ -86,7 +86,9 @@ app.get('/getCategory', (req, res) => {
             "SELECT category FROM categories;" ,
             (err, result) => {
                 console.log(err)
+                console.log(result)
             }
+            
         )   
 })
 
