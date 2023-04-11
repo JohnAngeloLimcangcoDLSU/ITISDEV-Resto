@@ -27,7 +27,7 @@ function MANAGER_addDish() {
   const removeRowBtns = document.querySelectorAll(".remove-row-btn");
   removeRowBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-      btn.remove();
+      btn.parentNode.remove();
     });
   });
 
@@ -44,47 +44,54 @@ function MANAGER_addDish() {
   <br/><br/>
   
   <div className="create-dish-form">
-    <form/>
-      <div className="form-group">
-        <label htmlFor="dish-name">Dish Name:</label>
-        <input type="text" id="dish-name" name="dish-name"  />
-        <br/><br/>
-      </div>
-      <div className="form-group">
-        <label htmlFor="dish-price">Dish Price:</label>
-        <input type="number" id="dish-price" name="dish-price" step="0.01" min="0"  />
-        <br/>
-      </div>
-      <hr/>
-      <h4>Ingredients:</h4>
-      <div className="ingredient-row">
-        <div className="form-group">
-          <label htmlFor="ingredient">Ingredient:</label>
-          <select id="ingredient" name="ingredient">
-            <option value="tomatoes">Tomatoes</option>
-            <option value="onions">Onions</option>
-            <option value="lettuce">Lettuce</option>
-          </select>
-        </div>
-        <div className="form-group">
-          <label htmlFor="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" step="0.01" min="0"  />
-        </div>
-        <div className="form-group">
-          <label htmlFor="unit">Unit:</label>
-          <select id="unit" name="unit">
-            <option value="g">g</option>
-            <option value="kg">kg</option>
-            <option value="ml">ml</option>
-            <option value="L">L</option>
-          </select>
-        </div>
+  <table>
+	  <tr>
+	    <form/>
+	      <div className="form-group">
+		<label htmlFor="dish-name">Dish Name:</label>
+		<input type="text" id="dish-name" name="dish-name"  />
+		<br/><br/>
+	      </div>
+	      <div className="form-group">
+		<label htmlFor="dish-price">Dish Price:</label>
+		<input type="number" id="dish-price" name="dish-price" step="0.01" min="0"  />
+		<br/>
+	      </div>
+	      <hr/>
+	      <h4>Ingredients:</h4>
+	      <div className="ingredient-row">
+		<div className="form-group">
+		  <label htmlFor="ingredient">Ingredient:</label>
+		  <select id="ingredient" name="ingredient">
+		    <option value="tomatoes">Tomatoes</option>
+		    <option value="onions">Onions</option>
+		    <option value="lettuce">Lettuce</option>
+		  </select>
+		  </div>
+		</div>
+		<div className="form-group">
+		  <label htmlFor="quantity">Quantity:</label>
+		  <input type="number" id="quantity" name="quantity" step="0.01" min="0"  />
+		</div>
+		<div className="form-group">
+		  <label htmlFor="unit">Unit:</label>
+		  <select id="unit" name="unit">
+		    <option value="g">g</option>
+		    <option value="kg">kg</option>
+		    <option value="ml">ml</option>
+		    <option value="L">L</option>
+		  </select>
+		 </div>
+		</tr>
+	</table>
+	
+	<div>
         <button className="remove-row-btn">Remove</button>
       </div>
       <button className="add-row-btn">Add Ingredient</button>
       <hr/>
       <button type="submit">Create Dish</button>
-    <form/>
+    <form />
   </div>
   
 </div>
