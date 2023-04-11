@@ -120,6 +120,7 @@ function Cashier() {
   
       // Remove the row element
       row.remove();
+      addedDishes.pop(dishName);
       totalCostCell.innerText = 'P' + (newTotal - currentTotal);
       totalCostParagraph.innerText = 'P' + (newTotal - currentTotal);
       // if (totalCostCell<0 && totalCostParagraph<0){
