@@ -59,6 +59,16 @@ function MANAGER_viewDiscrepancy() {
 
     </table>
 
+    {discrepancy.map((val, key) => {
+      return <div key = {val.id} classname="form-content">
+        {val.id}
+        {val.discrepancy_name}
+        {discrepancy_quantity}
+        {inventory_id}
+
+        </div>
+    })}
+
 
 
   </div>

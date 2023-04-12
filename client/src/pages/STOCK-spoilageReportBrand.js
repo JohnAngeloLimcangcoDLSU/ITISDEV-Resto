@@ -7,11 +7,6 @@ function STOCK_spoilageReportBrand() {
   return (
 
 <div>
-  <div class = "header">
-      
-    <h1>Create Spoilage Report</h1>
-
-  </div>
 
   <div class="form-content">
     

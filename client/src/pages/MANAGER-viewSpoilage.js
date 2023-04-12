@@ -56,7 +56,7 @@ function MANAGER_viewSpoilage() {
       </table>
 
       {spoilage.map((val, key) => {
-        return <div key = {val.id}>
+        return <div key = {val.id} classname="form-content">
           {val.spoil_name}
           {val.spoil_quantity}
           {val.inventory_id}

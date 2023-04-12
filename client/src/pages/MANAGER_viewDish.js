@@ -45,7 +45,7 @@ function MANAGER_viewDish() {
   </table>
 
   {dish.map((val, key) => {
-    return <div key = {val.id}>
+    return <div key = {val.id} classname="form-content">
       {val.id}
       {val.name}
 

@@ -49,7 +49,7 @@ function MANAGER_viewUser() {
   </table>
 
 {user.map((val, key) => {
-  return <div key = {val.id}>
+  return <div key = {val.id} classname="form-content">
       {val.username}
       {val.role_id}
 

@@ -21,7 +21,7 @@ function STOCK_viewInventory() {
         <h1>Available Ingredients in Stock</h1>
 
         {inventory.map((val, key) => {
-          return <div key = {val.id}>
+          return <div key = {val.id} classname="form-content">
             {val.name}
             {val.category_id}
             {val.quantity}
