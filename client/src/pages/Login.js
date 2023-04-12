@@ -2,6 +2,7 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import Axios from 'axios'
 import '../App.css'
+import { Navigate } from 'react-router-dom'
 
 function Registration() {
 
@@ -9,6 +10,8 @@ function Registration() {
     const [password, setPassword] = useState('')
 
     const [loginStatus, setLoginStatus] = useState('')
+
+    const [users, setUsers] = useState([])
 
     Axios.defaults.withCredentials = true
 
@@ -35,6 +38,12 @@ function Registration() {
         })
     }, [])
 
+    useEffect (() => {
+        Axios.get('http://localhost:3001/getusers').then((response) => {
+            setUsers(response.data)
+        })
+    })
+
     return (
         <div className='App'>
             <div className='login'>
@@ -45,6 +54,16 @@ function Registration() {
             </div>
 
             <h1>{loginStatus}</h1>
+
+            {users.map((val, key) => {
+                    return <div key={val.id}>
+                                {val.id}
+                                {val.username}
+                                {val.role_name}
+                            </div>
+                    })
+            }
+
         </div>
     )
 }

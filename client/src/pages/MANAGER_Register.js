@@ -2,6 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import Axios from 'axios'
 import '../App.css'
+import Select from 'react-select'
 
 function Registration() {
 
@@ -9,6 +10,9 @@ function Registration() {
     const [passwordReg, setPasswordReg] = useState('')
     const [firstname, setFirstname] = useState('')
     const [lastname, setLastname] = useState('')
+    const [role, setRole] = useState('')
+
+    const [roles, setRoles] = useState([])
 
     Axios.defaults.withCredentials = true
     
@@ -17,9 +21,17 @@ function Registration() {
         {username: usernameReg,
         firstname: firstname,
         lastname: lastname,
-        password: passwordReg}
+        password: passwordReg,
+        role_id: role}
         ).then((response) => {
         console.log(response)
+        })
+    }
+
+    const getRoles = () => {
+        Axios.get('http://localhost:3005/roles').then((response) => {
+            console.log(response)
+            setRoles(response.data)
         })
     }
 
@@ -35,7 +47,14 @@ function Registration() {
                 <input type='text' onChange={(e) => {setLastname(e.target.value)}}/>
                 <label>Password</label>
                 <input type='text' onChange={(e) => {setPasswordReg(e.target.value)}}/>
-                
+                <label>Role</label>
+                <input type='text' onChange={(e) => {setRole(e.target.value)}}/>
+                <select>
+                    <option>Manager</option>
+                    <option>Stock Controller</option>
+                    <option>Cashier</option>
+                </select>
+
                 <button onClick={register}> Register </button>
             </div>
         </div>

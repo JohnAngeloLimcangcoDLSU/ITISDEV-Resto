@@ -47,6 +47,8 @@ app.post('/register', (req, res) => {
     const password = req.body.password
     const firstname = req.body.firstname
     const lastname = req.body.lastname
+    const active = 0
+    const role_id = req.body.role
 
 //Password hashing
     bcrypt.hash(password, saltRounds, (err, hash) => {
@@ -54,8 +56,8 @@ app.post('/register', (req, res) => {
             console.log(err)
         }
         db.query(
-            "INSERT INTO users (username, password, first_name, last_name) VALUES (?,?,?,?)", 
-            [username, hash, firstname, lastname],
+            "INSERT INTO users (username, password, first_name, last_name, created, active, role_id) VALUES (?,?,?,?, NOW(),?,?)", 
+            [username, hash, firstname, lastname, active, role_id],
             (err, result) => {
                 console.log(err)
             }
@@ -71,6 +73,38 @@ app.get('/login', (req, res) => {
     else {
         res.send({loggedIn: false})
     }
+})
+
+//Get roles table
+app.get('/roles', (req, res) => {
+    db.query(
+        'SELECT * FROM roles;',
+        (err, result) => {
+            if (err){
+                console.log(err)
+            }
+            else {
+                console.log(result)
+                res.send(result)
+            }
+        }
+    )
+})
+
+//Get users table
+app.get('/getusers', (req, res) => {
+    db.query(
+        'SELECT * FROM users;',
+        (err, result) => {
+            if (err){
+                console.log(err)
+            }
+            else {
+                console.log(result)
+                res.send(result)
+            }
+        }
+    )
 })
 
 //Query for logging in user
