@@ -198,9 +198,39 @@ app.get('/getUser' , (req, res) => {
 })
 
 //Get dishes
-app.get('/getDishes' , (req, res) => {
+app.get('/getDish' , (req, res) => {
     db.query(
         "SELECT * FROM Dish;" ,
+        (err, result) => {
+            if(err) {
+                console.log(err)
+            }
+            else {
+                console.log(result)
+                res.send(result)
+            }
+        }
+    )
+})
+
+app.get('/getManagerSpoilage' , (req, res) => {
+    db.query(
+        "SELECT * FROM Spoilage" ,
+        (err, result) => {
+            if(err) {
+                console.log(err)
+            }
+            else {
+                console.log(result)
+                res.send(result)
+            }
+        }
+    )
+})
+
+app.get('/getDiscrepancy' , (req, res) => {
+    db.query(
+        "SELECT * FROM Discrepancy" ,
         (err, result) => {
             if(err) {
                 console.log(err)

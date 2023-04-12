@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/MANAGER_viewDish.css'
+import Axios  from 'axios'
 
 function MANAGER_viewDish() {
+  
+  const [dish, setDish] = useState([])
+
+  Axios.defaults.withCredentials = true
+
+  useEffect(() => {
+    Axios.get("http://localhost:3005/getDish").then((response) => {
+      console.log(response)
+      setDish(response.data)
+    })
+  })
+  
   return (
     
 <div class="form-content">

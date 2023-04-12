@@ -4,6 +4,17 @@ import '../styles/MANAGER-viewSpoilage.css'
 
 function MANAGER_viewSpoilage() {
 
+  const [spoilage, setSpoilage] = useState([])
+
+  Axios.defaults.withCredentials = true
+
+  useEffect(() => {
+    Axios.get('http://localhost:3005/getManagerSpoilage').then((response) => {
+      console.log(response)
+      setSpoilage(response.data)
+    })
+  })
+
   return (
     <div>
 
@@ -46,7 +57,11 @@ function MANAGER_viewSpoilage() {
 
       {spoilage.map((val, key) => {
         return <div key = {val.id}>
-          {val}
+          {val.spoil_name}
+          {val.spoil_quantity}
+          {val.inventory_id}
+
+          </div>
       })}
 
 
