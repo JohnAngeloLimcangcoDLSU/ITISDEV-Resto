@@ -72,11 +72,11 @@ function Cashier() {
     const totalCostCell = document.querySelector('#totalCostCell');
     const currentTotal = parseFloat(totalCostCell.innerText.substring(1));
     const dishCost = parseFloat(dishPrice.substring(1));
-    totalCostCell.innerText = 'P' + (currentTotal + dishCost).toFixed(2);
+    totalCostCell.innerText = 'P' + (currentTotal + dishCost);
   
     // Update the total cost in the paragraph element
     const totalCostParagraph = document.querySelector('#totalCostParagraph');
-    totalCostParagraph.innerText = 'P' + (currentTotal + dishCost).toFixed(2);
+    totalCostParagraph.innerText = 'P' + (currentTotal + dishCost);
   
   
       // Add an event listener to the "-" button of the new row
@@ -113,16 +113,27 @@ function Cashier() {
     
     removeButtons.forEach(button => {
       button.addEventListener('click', () => {
-        console.log("remove");
-      // Get the parent element of the button, which is the row element
-      const row = button.parentNode.parentNode;
-    const newTotal = (dishCost)
-  
-      // Remove the row element
-      row.remove();
-      addedDishes.pop(dishName);
-      totalCostCell.innerText = 'P' + (newTotal - currentTotal);
-      totalCostParagraph.innerText = 'P' + (newTotal - currentTotal);
+        // Get the parent element of the button, which is the row element
+        const row = button.parentNode.parentNode;
+        const dishPrice = row.querySelector('td:nth-child(2)').innerText;
+        const dishCost = parseFloat(dishPrice.substring(1));
+        const quantity = parseInt(row.querySelector('td:nth-child(3) span').innerText);
+        const newTotal = (dishCost * quantity);
+        const currentTotal = parseFloat(document.querySelector('#totalCostCell').innerText.substring(1));
+        const updatedTotal = currentTotal - newTotal;
+    
+        // Remove the row element
+        row.remove();
+        addedDishes = addedDishes.filter(dish => dish !== row.firstChild.innerText);
+    
+        // Update the total cost of the order
+        const totalCostCell = document.querySelector('#totalCostCell');
+        totalCostCell.innerText = 'P' + updatedTotal;
+    
+        // Update the total cost in the paragraph element
+        const totalCostParagraph = document.querySelector('#totalCostParagraph');
+        totalCostParagraph.innerText = 'P' + updatedTotal;
+    
       // if (totalCostCell<0 && totalCostParagraph<0){
       // 	totalCostCell.innerText = 'P' + 0.00;
       // 	totalCostParagraph.innerText = 'P' + 00;
@@ -153,27 +164,27 @@ function Cashier() {
   <li>
     <button className="button">Add</button>
     <span>Item 1</span>
-    <span>P10.00</span>
+    <span>P1</span>
   </li>
   <li>
     <button className="button">Add</button>
     <span>Item 2</span>
-    <span>P15.00</span>
+    <span>P1</span>
   </li>
   <li>
     <button className="button">Add</button>
     <span>Item 3</span>
-    <span>P20.00</span>
+    <span>P1</span>
   </li>
   <li>
     <button className="button">Add</button>
     <span>Item 4</span>
-    <span>P25.00</span>
+    <span>P25</span>
   </li>
   <li>
     <button className="button">Add</button>
     <span>Item 5</span>
-    <span>P30.00</span>
+    <span>P30</span>
   </li>
 </ul>
 
@@ -199,7 +210,7 @@ function Cashier() {
   <tfoot>
     <tr>
       <th colSpan="3">Total</th>
-      <th id="totalCostCell">P0.00</th>
+      <th id="totalCostCell">P0</th>
       <th></th>
     </tr>
   </tfoot>
@@ -209,7 +220,7 @@ function Cashier() {
 
 </div>
 
-<p>Total cost: <span id="totalCostParagraph">P0.00</span></p>
+<p>Total cost: <span id="totalCostParagraph">P0</span></p>
 
 </div>
 
