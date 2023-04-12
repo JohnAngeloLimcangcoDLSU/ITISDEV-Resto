@@ -1,5 +1,16 @@
 import React, {useEffect} from 'react'
+import React, {useState} from 'react';
 import '../styles/MANAGER_addDish.css'
+//Import data from existing table here
+
+//const MANAGER_addDish = () => {
+//	
+//	const [ingredients, setIngredient] = useState(data from table);
+//
+// return(html code)
+//}
+// add this to the table: {ingredients.map((ingredient) => (table data))}	
+//replace data with {ingredeint.name} etc
 
 function MANAGER_addDish() {
 
@@ -60,6 +71,7 @@ function MANAGER_addDish() {
 	  
 		  <h4>Ingredients:</h4>
 		  <table>
+			<tbody>
 			  <tr>
 				  <td>	
 					  <div className="ingredient-row">
@@ -86,7 +98,8 @@ function MANAGER_addDish() {
 					  </select>
 					  </div>
 				  </td>
-			  </tr>
+			  	</tr>
+			  </tbody>
 		  </table>
 		  </div>
 	  
