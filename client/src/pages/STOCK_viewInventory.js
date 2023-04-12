@@ -1,39 +1,49 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Axios from 'axios'
 import '../styles/STOCK-viewInventory.css'
 
 function STOCK_viewInventory() {
+
+  const [inventory, setInventory] = useState([])
+
+  Axios.defaults.withCredentials = true
+
+  useEffect(() => {
+    Axios.get('http://localhost:3005/getInventory').then((response) => {
+      console.log(response)
+      setInventory(response.data)
+    })
+  })
 
   return (
 
       <div class="form-content">
         <h1>Available Ingredients in Stock</h1>
 
-
-        <table>
+        {inventory.map((val, key) => {
+          return <div key = {val.id}>
+            {val.name}
+            {val.category_id}
+            {val.quantity}
+            {val.unit_id} 
+            
+          </div>
+        })}
+        {/* <table>
           <tr>
-            <th>Ingredients    <img src="../assets/arrowDown.png" class="arrowIcon" /></th>
-
-            <th>Quantity  <img src="../assets/arrowDown.png" class="arrowIcon" /></th>
+            <th>Name<img src="../assets/arrowDown.png" class="arrowIcon" /></th>
+            <th>Category<img src="../assets/arrowDown.png" class="arrowIcon" /></th>
+            <th>Quantity</th>
             <th>Unit</th>
 
           </tr>
           <tr>
-            <td>Banana</td>
-            <td>1000</td>
-            <td>g</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
-          <tr>
-            <td>Tuna</td>
-            <td>125</td>
-            <td>g</td>
-          </tr>
-          <tr>
-            <td>Rice</td>
-            <td>125</td>
-            <td>g</td>
-          </tr>
-
-        </table>
+        </table> */}
 
 
       </div>

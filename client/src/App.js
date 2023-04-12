@@ -12,6 +12,7 @@ import STOCK_inputFirstPurchaseIngredient from './pages/STOCK_inputFirstPurchase
 import Cashier from './pages/Cashier';
 import Units from './pages/Units';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import STOCK_viewInventory from './pages/STOCK_viewInventory';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path='/inputFirstPurchaseIngredient' element={<STOCK_inputFirstPurchaseIngredient />} />
           <Route path='/cashier' element={<Cashier />} />
           <Route path='/units' element={<Units />} />
+          <Route path='/inventory' element={<STOCK_viewInventory />} />
         </Routes>
       </Router>
     </div>

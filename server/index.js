@@ -36,7 +36,7 @@ app.use(session({
 const db = mysql2.createConnection({
     user: 'root',
     host: 'localhost',
-    password: '802Sonria!',
+    password: '12345678',
     database: 'Inventory'
 })
 
@@ -154,13 +154,35 @@ app.get('/getCategory', (req, res) => {
         db.query(
             "SELECT category FROM categories;" ,
             (err, result) => {
-                console.log(err)
-                console.log(result)
+                if(err) {
+                    console.log(err)
+                }
+                else {
+                    console.log(result)
+                    res.send(result)
+                }
             }
             
         )   
 })
 
-app.listen (3001, () => {
+//Get inventory table
+app.get('/getInventory', (req, res) => {
+    db.query(
+        "SELECT * FROM Inventory;" ,
+        (err, result) => {
+            if(err) {
+                console.log(err)
+            }
+            else {
+                console.log(result)
+                res.send(result)
+            }
+    })
+})
+
+//Get 
+
+app.listen (3005, () => {
     console.log('running server')
 })
