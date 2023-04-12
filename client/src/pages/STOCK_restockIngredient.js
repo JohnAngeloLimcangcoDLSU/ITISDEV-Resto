@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/STOCK-restrockIngredient.css'
+import '../styles/STOCK-restockIngredient.css'
 
 function STOCK_restockIngredient() {
 

@@ -52,6 +52,8 @@ function STOCK_inputFirstPurchaseIngredient() {
             ))}
             </select>
 
+            <p>{categories} p</p>
+
 
   
 

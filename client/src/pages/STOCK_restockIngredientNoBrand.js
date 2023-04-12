@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/STOCK-restrockIngredientNoBrand.css'
+import '../styles/STOCK-restockIngredientNoBrand.css'
 
 function STOCK_restockIngredientNoBrand() {
 
