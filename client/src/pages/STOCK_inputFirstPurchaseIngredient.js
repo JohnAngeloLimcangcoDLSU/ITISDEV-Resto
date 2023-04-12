@@ -7,30 +7,14 @@ function STOCK_inputFirstPurchaseIngredient() {
 
     Axios.defaults.withCredentials = true
 
- 
-
-    // const [category, ingredientCategory] = useState('');
-
-    // useEffect(() => {
-    //     Axios.get('http://localhost:3001/getCategory')
-    //     .then(response => {
-    //         ingredientCategory(response.data);
-    //     })
-    //     .catch(error => console.error('Error: ', error));
-    // }, []);
-
-
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        Axios.get('http://localhost:3001/getCategory')
-          .then(response => {
-            setCategories(response.data.category);
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      }, []);
+      fetch('http://localhost:3001/getCategory')
+        .then(res => res.json())
+        .then(data => setCategories(data))
+        .catch(error => console.error(error));
+    }, []);
       
     
     
@@ -51,8 +35,6 @@ function STOCK_inputFirstPurchaseIngredient() {
                 <option key={key} value={category.id}>{category.category}</option>
             ))}
             </select>
-
-            <p>{categories} p</p>
 
 
   
