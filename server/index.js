@@ -181,7 +181,21 @@ app.get('/getInventory', (req, res) => {
     })
 })
 
-//Get 
+//Get user report
+app.get('/getUser' , (req, res) => {
+    db.query(
+        "SELECT username, role_id FROM Users;" ,
+        (err, result) => {
+            if(err) {
+                console.log(err)
+            }
+            else {
+                console.log(result)
+                res.send(result)
+            }
+        }
+    )
+})
 
 app.listen (3005, () => {
     console.log('running server')

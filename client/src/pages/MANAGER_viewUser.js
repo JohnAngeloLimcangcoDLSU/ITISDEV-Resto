@@ -1,11 +1,21 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import '../styles/MANAGER_viewUser.css'
+import Axios from 'axios'
 
 function MANAGER_viewUser() {
 
-    
+    const [user, setUser] = useState([])
 
-  return (
+    Axios.defaults.withCredentials = true
+
+    useEffect(() => {
+      Axios.get('http://localhost3005/getUser').then((response) => {
+        console.log(response)
+        setUser(response.data)
+      })
+    })
+    
+    return (
   
 
 <div class="form-content">
@@ -17,7 +27,7 @@ function MANAGER_viewUser() {
       <th>Role</th>
   
     </tr>
-    <tr>
+    {/* <tr>
       <td>ManagerUser</td>
       <td>Manager</td>
    
@@ -34,9 +44,17 @@ function MANAGER_viewUser() {
       <td>Cashier</td>
 
 
-    </tr>
+    </tr> */}
 
   </table>
+
+{user.map((val, key) => {
+  return <div key = {val.id}>
+      {val.username}
+      {val.role_id}
+
+      </div>
+})}
 
 
 
