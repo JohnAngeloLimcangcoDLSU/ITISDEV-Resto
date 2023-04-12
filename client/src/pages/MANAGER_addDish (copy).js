@@ -39,62 +39,66 @@ function MANAGER_addDish() {
 
   return (
     
-<div className="form-content">
-  <h1>Available Dishes in the Menu</h1>
-  <br/><br/>
-  
-  <div className="create-dish-form">
-  <table>
-	  <tr>
-	    <form/>
-	      <div className="form-group">
-		<label htmlFor="dish-name">Dish Name:</label>
-		<input type="text" id="dish-name" name="dish-name"  />
-		<br/><br/>
-	      </div>
-	      <div className="form-group">
-		<label htmlFor="dish-price">Dish Price:</label>
-		<input type="number" id="dish-price" name="dish-price" step="0.01" min="0"  />
-		<br/>
-	      </div>
-	      <hr/>
-	      <h4>Ingredients:</h4>
-	      <div className="ingredient-row">
-		<div className="form-group">
-		  <label htmlFor="ingredient">Ingredient:</label>
-		  <select id="ingredient" name="ingredient">
-		    <option value="tomatoes">Tomatoes</option>
-		    <option value="onions">Onions</option>
-		    <option value="lettuce">Lettuce</option>
-		  </select>
-		  </div>
-		</div>
-		<div className="form-group">
-		  <label htmlFor="quantity">Quantity:</label>
-		  <input type="number" id="quantity" name="quantity" step="0.01" min="0"  />
-		</div>
-		<div className="form-group">
-		  <label htmlFor="unit">Unit:</label>
-		  <select id="unit" name="unit">
-		    <option value="g">g</option>
-		    <option value="kg">kg</option>
-		    <option value="ml">ml</option>
-		    <option value="L">L</option>
-		  </select>
-		 </div>
-		</tr>
-	</table>
+	<div className="form-content">
+	<h1>Available Dishes in the Menu</h1>
+	<br/><br/>
 	
-	<div>
-        <button className="remove-row-btn">Remove</button>
-      </div>
-      <button className="add-row-btn">Add Ingredient</button>
-      <hr/>
-      <button type="submit">Create Dish</button>
-    <form />
-  </div>
+	<div className="create-dish-form">
   
-</div>
+	  <form/>
+		  <div className="form-group">
+			  <label htmlFor="dish-name">Dish Name:</label>
+			  <input type="text" id="dish-name" name="dish-name"  />
+			  <br/><br/>
+		  </div>
+		  <div className="form-group">
+			  <label htmlFor="dish-price">Dish Price:</label>
+			  <input type="number" id="dish-price" name="dish-price" step="0.01" min="0"  />
+			  <br/>
+		  </div>
+		  <hr/>
+	  
+		  <h4>Ingredients:</h4>
+		  <table>
+			  <tr>
+				  <td>	
+					  <div className="ingredient-row">
+					  <div className="form-group">
+					  <label htmlFor="ingredient">Ingredient:</label>
+					  <select id="ingredient" name="ingredient">
+						  <option value="tomatoes">Tomatoes</option>
+						  <option value="onions">Onions</option>
+						  <option value="lettuce">Lettuce</option>
+					  </select>
+					  </div>
+					  </div>
+					  <div className="form-group">
+					  <label htmlFor="quantity">Quantity:</label>
+					  <input type="number" id="quantity" name="quantity" step="0.01" min="0"  />
+					  </div>
+					  <div className="form-group">
+					  <label htmlFor="unit">Unit:</label>
+					  <select id="unit" name="unit">
+						  <option value="g">g</option>
+						  <option value="kg">kg</option>
+						  <option value="ml">ml</option>
+						  <option value="L">L</option>
+					  </select>
+					  </div>
+				  </td>
+			  </tr>
+		  </table>
+		  </div>
+	  
+	  <div>
+		  <button className="remove-row-btn">Remove</button>
+		<button className="add-row-btn">Add Ingredient</button>
+		<hr/>
+		<button type="submit">Create Dish</button>
+	  <form />
+	</div>
+	
+  </div>
 
 
   )
