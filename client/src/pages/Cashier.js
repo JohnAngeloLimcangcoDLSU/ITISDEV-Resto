@@ -127,6 +127,7 @@ function Cashier() {
       // 	totalCostCell.innerText = 'P' + 0.00;
       // 	totalCostParagraph.innerText = 'P' + 00;
       // }
+      //
       });
     });
   
