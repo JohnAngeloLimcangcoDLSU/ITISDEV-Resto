@@ -1,0 +1,128 @@
+@import 
+url('https://fonts.googleapis.com/css2?family=Lato&display=swap');  
+
+:root {
+    --primary: #3e48a9;
+    --accent: #f9bbd0;
+    --text-primary: #ffffff;
+    --text-accent: #000000;
+    --text-subtle: #000000;
+    --text-link: #003469;
+}
+
+.header{
+    position: sticky;
+    text-align: center;
+    border: 1px solid rgb(214,214,214);
+    top: 0px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    background: #36AEB0;
+    font-family: Lato, sans-serif;
+    color: white;
+    z-index:1;
+}
+
+.header_username{
+  position: sticky;
+  text-align: right;
+  border: 1px solid rgb(214,214,214);
+  top: 0px;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  font-family: Lato, sans-serif;
+  color: white;
+  z-index:1;
+
+}
+
+.sidebar {
+height: 100%;
+width: 350px;
+position: absolute;
+left: 0;
+top: 0;
+padding-top: 100px;
+background-color: #D9D9D9;
+
+}
+
+.sidebar-text{
+  font-family: Lato, sans-serif;
+  color: black;
+  
+  padding-left: 50px;
+  font-size: 20px;
+  display: block;
+}
+
+.sidebar-category{
+  font-size: 20px;
+  font-family: Lato, sans-serif;
+  padding-left: 10px;
+color: black;
+opacity: 50%;
+}
+
+.click-sidebar{
+  width: 40px;
+	height: 40px;
+}
+
+.form-content{
+
+  margin: auto;
+  margin-top:100px;
+  width: 50%;
+  border: 3px solid #D9D9D9;
+  padding: 10px;
+ 
+  text-align: center;
+  font-family: Lato, sans-serif;
+  color: black;
+
+
+
+}
+
+.arrowIcon{
+  /* display: flex;
+	position:relative; */
+  width: 20px;
+	height: 20px;
+  
+}
+
+.arrowIcon:hover{
+  transform: rotate(180deg);
+}
+
+form{
+  font-family: Lato, sans-serif;
+  color: black;
+  
+  font-size: 30px;
+  display: block;
+}
+
+
+table {
+  font-family: Lato, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td, th {
+  border: 2px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}

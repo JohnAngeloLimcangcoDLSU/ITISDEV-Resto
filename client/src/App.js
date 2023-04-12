@@ -13,6 +13,7 @@ import Cashier from './pages/Cashier';
 import Units from './pages/Units';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import STOCK_viewInventory from './pages/STOCK_viewInventory';
+import MANAGER_addDish from './pages/MANAGER_addDish';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path='/cashier' element={<Cashier />} />
           <Route path='/units' element={<Units />} />
           <Route path='/inventory' element={<STOCK_viewInventory />} />
+          <Route path='/dish' element={<MANAGER_viewDish />} />
         </Routes>
       </Router>
     </div>

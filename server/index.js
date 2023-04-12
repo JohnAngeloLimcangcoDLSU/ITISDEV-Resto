@@ -197,6 +197,22 @@ app.get('/getUser' , (req, res) => {
     )
 })
 
+//Get dishes
+app.get('/getDishes' , (req, res) => {
+    db.query(
+        "SELECT * FROM Dish;" ,
+        (err, result) => {
+            if(err) {
+                console.log(err)
+            }
+            else {
+                console.log(result)
+                res.send(result)
+            }
+        }
+    )
+})
+
 app.listen (3005, () => {
     console.log('running server')
 })
