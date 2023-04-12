@@ -10,11 +10,13 @@ function STOCK_inputFirstPurchaseIngredient() {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-      fetch('http://localhost:3001/getCategory')
+        Axios.get('http://localhost:3001/getCategory')
         .then(res => res.json())
         .then(data => setCategories(data))
         .catch(error => console.error(error));
-    }, []);
+
+        console.log(categories);
+    }, [categories]);
       
     
     
@@ -31,10 +33,12 @@ function STOCK_inputFirstPurchaseIngredient() {
             <label htmlFor="brand">Ingredient Category:</label>
 
             <select>
-            {categories.map((category, key) => (
-                <option key={key} value={category.id}>{category.category}</option>
-            ))}
-            </select>
+                {categories.map((category, index) => (
+                <option key={index} value={category.category}>
+                    {category.category}
+                </option>
+                ))}
+             </select>
 
 
   
