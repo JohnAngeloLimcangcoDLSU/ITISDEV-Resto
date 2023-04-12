@@ -45,6 +45,8 @@ app.post('/register', (req, res) => {
 
     const username = req.body.username
     const password = req.body.password
+    const firstname = req.body.firstname
+    const lastname = req.body.lastname
 
 //Password hashing
     bcrypt.hash(password, saltRounds, (err, hash) => {
@@ -52,8 +54,8 @@ app.post('/register', (req, res) => {
             console.log(err)
         }
         db.query(
-            "INSERT INTO users (username, password) VALUES (?,?)", 
-            [username, hash],
+            "INSERT INTO users (username, password, first_name, last_name) VALUES (?,?,?,?)", 
+            [username, hash, firstname, lastname],
             (err, result) => {
                 console.log(err)
             }
