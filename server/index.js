@@ -36,7 +36,7 @@ app.use(session({
 const db = mysql2.createConnection({
     user: 'root',
     host: 'localhost',
-    password: 'rusherdragger',
+    password: '802Sonria!',
     database: 'Inventory'
 })
 
@@ -105,6 +105,60 @@ app.post('/login', (req, res) => {
             }
         }
     )
+})
+
+
+app.post('/makeIngCat', (req, res) => {
+    
+    const category = req.body.category
+   
+
+        // if (err) {
+        //     console.log(err)
+        // }
+        db.query(
+            "INSERT INTO categories (category) VALUES (?)", 
+            [category],
+            (err, result) => {
+                console.log(err)
+                console.log(result)
+            }
+        )   
+})
+
+
+app.post('/makeUnits', (req, res) => {
+    // const id = req.body.id
+    const unit = req.body.unit
+    const unit_name = req.body.unit_name
+
+        // if (err) {
+        //     console.log(err)
+        // }
+        db.query(
+            "INSERT INTO units (unit, unit_name) VALUES (?,?)", 
+            [unit, unit_name],
+            (err, result) => {
+                console.log(err)
+                console.log(result)
+            }
+        )   
+})
+
+app.get('/getCategory', (req, res) => {
+    const category = req.body.category
+
+        // if (err) {
+        //     console.log(err)
+        // }
+        db.query(
+            "SELECT category FROM categories;" ,
+            (err, result) => {
+                console.log(err)
+                console.log(result)
+            }
+            
+        )   
 })
 
 app.listen (3001, () => {
