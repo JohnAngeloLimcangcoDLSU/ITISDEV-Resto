@@ -25,7 +25,7 @@ function STOCK_inputFirstPurchaseIngredient() {
     useEffect(() => {
         Axios.get('http://localhost:3001/getCategory')
           .then(response => {
-            setCategories(response.data);
+            setCategories(response.data.category);
           })
           .catch(error => {
             console.log(error);
@@ -47,8 +47,8 @@ function STOCK_inputFirstPurchaseIngredient() {
             <label htmlFor="brand">Ingredient Category:</label>
 
             <select>
-            {categories.map(category => (
-                <option key={category.id} value={category.id}>{category.category}</option>
+            {categories.map((category, key) => (
+                <option key={key} value={category.id}>{category.category}</option>
             ))}
             </select>
 

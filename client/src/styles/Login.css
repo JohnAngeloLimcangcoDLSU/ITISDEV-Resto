@@ -203,7 +203,7 @@ div.PasswordIcon
 }
 
 
-table {
+/* table {
     font-family: Lato, sans-serif;
     border-collapse: collapse;
     width: 50%;
@@ -219,7 +219,7 @@ table {
   }
   
   tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: white;
   }
 
   .login{
@@ -229,5 +229,5 @@ table {
 
   }
 
-  
+   */
 

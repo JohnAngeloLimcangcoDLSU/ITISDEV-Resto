@@ -9,15 +9,30 @@ function STOCK_inputFirstPurchaseIngredient() {
 
  
 
-    const [category, ingredientCategory] = useState('');
+    // const [category, ingredientCategory] = useState('');
+
+    // useEffect(() => {
+    //     Axios.get('http://localhost:3001/getCategory')
+    //     .then(response => {
+    //         ingredientCategory(response.data);
+    //     })
+    //     .catch(error => console.error('Error: ', error));
+    // }, []);
+
+
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         Axios.get('http://localhost:3001/getCategory')
-        .then(response => {
-            ingredientCategory(response.data);
-        })
-        .catch(error => console.error('Error: ', error));
-    }, []);
+          .then(response => {
+            setCategories(response.data.category);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }, []);
+      
+    
     
 
     return (
@@ -28,14 +43,16 @@ function STOCK_inputFirstPurchaseIngredient() {
             <h1>Input first purchase of ingredients to the list</h1>
             <br />
 
-            <form action="/action_page.php">
 
-            <select value={category} onChange={(e) => {ingredientCategory(e.target.value)}}>
-      <option   multiple={true} value="">Select a ingredient category</option>
-    
-        <option key={10} value={category.category}>{category.name}</option>
-    
-    </select>
+            <label htmlFor="brand">Ingredient Category:</label>
+
+            <select>
+            {categories.map((category, key) => (
+                <option key={key} value={category.id}>{category.category}</option>
+            ))}
+            </select>
+
+
   
 
                 <br /><br />
@@ -63,11 +80,7 @@ function STOCK_inputFirstPurchaseIngredient() {
 
                                 <br /><br />
 
-                                    <input type="submit" value="Submit" />
-                                    </form>
-
-
-
+                                    <input type="submit" value="Submit" />    
 
                 </div>
 
